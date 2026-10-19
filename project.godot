@@ -7,6 +7,9 @@ config_version=5
 
 config/name="Guerrière d'Abomey"
 config/description="Action-aventure 3D low-poly hors ligne, inspirée du royaume du Dahomey."
+config/author="Johnson Studio"
+config/copyright="© 2026 Johnson Studio"
+config/version="0.1.0"
 run/main_scene="res://scenes/main/Splash.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.101961, 0.078431, 0.066667, 1)
@@ -31,6 +34,7 @@ Network="*res://autoload/Network.gd"
 AttackTokenManager="*res://autoload/AttackTokenManager.gd"
 Achievements="*res://autoload/Achievements.gd"
 Quality="*res://autoload/Quality.gd"
+AutoTest="*res://scripts/debug/AutoTest.gd"
 Localizer="*res://autoload/Localizer.gd"
 
 [display]

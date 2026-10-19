@@ -6,6 +6,11 @@ extends Node3D
 ## Le code gameplay ne connaît QUE ces noms ; remplacer par le vrai .glb
 ## Mixamo (§ 6.4) ne touchera pas à l'AnimationTree ni au viewer.
 
+## NOTE : ce fichier vit dans `scripts/characters/`, PAS dans `scripts/tests/`.
+## Le filtre d'export Android exclut `scripts/tests/*`, alors que `Player3D`,
+## `EnemyBase3D` et `Dummy3D` instancient cette poupée quand aucun `.glb` n'est
+## fourni. Déplacée ici, elle part bien dans l'APK (bug constaté sur l'itel le
+## 19 octobre : `LevelBase3D` ne trouvait plus de `Player3D` typé).
 class_name TestPuppet
 
 const CEL_SHADER := preload("res://shaders/cel_shading.gdshader")

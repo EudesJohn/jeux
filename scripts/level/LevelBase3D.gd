@@ -410,6 +410,15 @@ func _apply_sun_light() -> void:
 	sun.light_energy = 0.7
 	sun.shadow_enabled = true
 	sun.shadow_bias = 0.05
+	# Mesuré sur l'itel S667LN (19 oct.) : en mode par défaut (PSSM 4 splits),
+	# la passe d'ombre redessine TOUT le décor quatre fois — 1,4 M de primitives
+	# contre 276 k en qualité Faible, et le pire 1 % tombe sous 30 images/s.
+	# Une seule tranche orthogonale suffit pour une caméra d'arène : la même
+	# ombre, un quart du coût.
+	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_ORTHOGONAL
+	# Au-delà de 18 m, l'ombre ne se voit plus à l'écran : inutile de la calculer.
+	sun.directional_shadow_max_distance = 18.0
+	sun.directional_shadow_blend_splits = false
 	built.add_child(sun)
 
 

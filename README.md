@@ -147,7 +147,7 @@ Si tout passe : **PHASE 0 validée** (déjà le cas sur l'itel S24 : 60 FPS, zé
 
 **Ce qui est déjà dans le projet :**
 - `scenes/tests/ModelViewer.tscn` : sol ocre, ciel indigo, caméra, **compteurs FPS / triangles / draw calls**.
-- `scripts/tests/TestPuppet.gd` : mannequin provisoire (10 articulations) avec les animations standards `idle, run, attack1-3, dodge, guard, hurt, death, interact` (§ 5).
+- `scripts/characters/TestPuppet.gd` : mannequin provisoire (10 articulations) avec les animations standards `idle, run, attack1-3, dodge, guard, hurt, death, interact` (§ 5).
 - `AnimationTree` + `AnimationNodeStateMachine` (§ 6.4 : tous les personnages partagent le même state machine).
 - Accès : bouton **« Test ModelViewer (PHASE 0.5) »** sur le menu principal, ou `F6` sur la scène sur PC.
 
@@ -176,7 +176,7 @@ Si tout passe : **PHASE 0 validée** (déjà le cas sur l'itel S24 : 60 FPS, zé
   automatique (provisoire en PHASE 1), branchements HUD et vibration.
 - `Dummy3D` : encaisse les coups, nombres de dégâts flottants, riposte
   télégraphiée (0,4 s) toutes les 2,6 s, mort puis réapparition.
-- `scripts/tests/TestPuppet.gd` : poupée provisoire (10 articulations) qui fournit
+- `scripts/characters/TestPuppet.gd` : poupée provisoire (10 articulations) qui fournit
   les 10 animations standard du § 6.4. **Chaque clip écrit toutes les pistes**
   (voir `_clip`) : pendant un fondu, une piste absente du clip d'arrivée est mise
   à l'échelle par le poids de l'autre et tend vers 0 — le torse tombait aux pieds
@@ -680,3 +680,32 @@ git status               # doit rester propre après une session de test
 - Après une modification : `git add -A && git commit -m "..." && git push`.
 - Un fichier disparu du dépôt sans raison ? `git check-ignore -v <chemin>`
   dit quelle règle l'exclut.
+
+## P. Préparer les modèles 3D (Blender 4.x)
+
+Quatre scripts `bpy` en ligne de commande vivent dans `tools/blender/` :
+`clean_character.py` (parasites, origine aux pieds, 1,70 m, Decimate à 6 000
+triangles, matériau unique), `separate_prop.py` (sort un sabre ou un fourreau
+dans son propre `.glb`), `batch_export.py` (tout un dossier + rapport CSV) et
+`add_shape_keys_template.py` (`shoulders`, `muscle`, `hips`, `slim`).
+Aucun ne modifie le fichier d'entrée. Détail et commandes Windows :
+**`tools/blender/README.md`**.
+
+```bash
+blender -b -P tools/blender/clean_character.py -- --input assets/raw/hero.glb --output assets/clean/hero_nawi.glb --height 1.70 --budget 6000
+```
+
+## Q. Tester sur le téléphone (adb)
+
+```bash
+bash tools/tester_telephone.sh
+bash tools/tester_telephone.sh --no-build   # réutilise build/guerriere_debug.apk
+```
+
+Le script détecte `adb` et l'appareil, installe avec `-r` (sans effacer les
+données), pose `user://auto_test.flag`, laisse tourner le test automatique
+(`scripts/debug/AutoTest.gd`, **debug uniquement** : la balise d'export
+`autotest` n'existe pas en release), relève `gfxinfo`, `meminfo`, la batterie et
+`logcat`, puis écrit `export/phone/RAPPORT_TELEPHONE.md` avec un verdict
+**VERT / ORANGE / ROUGE** et les réglages à appliquer.
+Sous Windows : `tools	ester_telephone.bat` (passe par Git Bash).

@@ -52,6 +52,16 @@ Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
     `JAVA_HOME`, APK signé vérifié (`META-INF/ANDROIDD.RSA`).
 12. **Numéro de textes faux dans le README** (167 au lieu de 166 : l'en-tête
     `msgid ""` était compté).
+13. **`TestPuppet` exclu de l'APK → jeu cassé sur téléphone** (trouvé le
+    19 octobre par `tools/tester_telephone.sh`). Le filtre d'export excluait
+    `scripts/tests/*`, où vivait la poupée grise ; or `Player3D`,
+    `EnemyBase3D` et `Dummy3D` l'instancient. Dans l'APK, ces scripts ne
+    compilaient plus (`Could not find script for class "TestPuppet"`),
+    `LevelBase3D` recevait un `CharacterBody3D` au lieu d'un `Player3D` et le
+    niveau ne se construisait pas. Corrigé en déplaçant le fichier dans
+    `scripts/characters/TestPuppet.gd` (aucune référence à changer, le
+    `class_name` est conservé) ; `Phase1Test` repasse en code 0 après
+    régénération du cache de classes (`--editor --quit`).
 
 ## 3. Problèmes ouverts (demandent une décision ou un fichier)
 
@@ -71,6 +81,16 @@ Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
 7. **Aucun test sur téléphone ici** : tout est validé en `--headless` (les
    contrôles tactiles simulés y sont ignorés). FPS, triangles et draw calls
    réels restent à mesurer sur l'itel S667LN.
+
+14. **Ombre de la qualité Haute 4 fois trop chère** (mesuré le 19 octobre sur
+    l'itel S667LN). La lampe directionnelle utilisait le mode PSSM par défaut
+    (4 tranches) : la passe d'ombre redessinait tout le décor quatre fois,
+    1,4 M de primitives et 588 appels de dessin contre 276 k / 150 en qualité
+    Faible. Passée en `SHADOW_ORTHOGONAL` avec `directional_shadow_max_distance
+    = 18 m` (§ 25 : une seule ombre pour la joueuse) : 575 k primitives,
+    266 appels, +39 % de moyenne sur le combat, verdict téléphone de ROUGE à
+    ORANGE. Il reste un saut de 131 ms au démarrage d'une vague (pool
+    d'ennemis à faire).
 
 ## 4. Dette et limites techniques
 
@@ -111,4 +131,11 @@ godot --headless --path . --script res://tools/slice_asset_sheet.gd -- \
 # APK signé (JAVA_HOME obligatoire, sinon APK non installable)
 export JAVA_HOME="C:/Program Files/Android/Android Studio/jbr"
 godot --headless --path . --export-debug "Android" export/guerriere-abomey-debug.apk
+
+# Préparation des modèles Blender (voir tools/blender/README.md)
+"C:/Program Files/Blender Foundation/Blender 4.2/blender.exe" -b -P tools/blender/clean_character.py -- \
+    --input assets/raw/hero.glb --output assets/clean/hero_nawi.glb --height 1.70 --budget 6000
+
+# Test complet sur le téléphone branché en USB (export, installation, mesures)
+bash tools/tester_telephone.sh
 ```

@@ -24,6 +24,14 @@ export/android/keystore*
 *.xcf
 *.kra
 
+# Sorties de build et de test téléphone (captures, journaux, rapports générés)
+build/
+export/phone/
+
+# Python
+__pycache__/
+*.pyc
+
 # Fichiers temporaires
 *.tmp
 Thumbs.db

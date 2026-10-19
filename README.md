@@ -655,3 +655,28 @@ modeleur.
   sources ; rien ne peut être vérifié avant leur livraison.
 - les budgets de `prop` sont une marge de travail : le § 6.2 ne donne qu'un
   plafond pour l'arène entière (< 60 000 tris, ≤ 6 appels).
+
+## O. Versionnage (git)
+
+Le projet est versionné sur **https://github.com/EudesJohn/jeux**, branche `main`.
+Le dépôt est le dossier `guerriere-abomey-3d/` lui-même (celui qui contient
+`project.godot`) — pas le dossier parent `D:/Jeux Benin`, qui garde une
+ancienne copie non versionnée.
+
+- **Ce qui est versionné** : scènes, scripts, ressources `.tres`, assets livrés,
+  tests, outils, DESIGN.md, README.md, ETAT.md.
+- **Ce qui reste dehors** (`.gitignore`) : le cache `.godot/`, les APK/AAB
+  (`export/*.apk`), les clés de signature (`*.keystore`) et les sources lourdes
+  (`*.blend`, `*.psd`, `*.xcf`). Un APK n'a pas à être commité : il se
+  reconstruit avec la commande du § C.
+- **Récupérer ou mettre à jour** :
+
+```bash
+git clone https://github.com/EudesJohn/jeux.git
+git pull                 # dans le dossier du projet
+git status               # doit rester propre après une session de test
+```
+
+- Après une modification : `git add -A && git commit -m "..." && git push`.
+- Un fichier disparu du dépôt sans raison ? `git check-ignore -v <chemin>`
+  dit quelle règle l'exclut.

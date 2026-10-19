@@ -1,6 +1,6 @@
 # État du projet et problèmes connus
 
-Mis à jour le 18 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
+Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
 
 ## 1. Où en est le projet
 
@@ -11,6 +11,7 @@ Mis à jour le 18 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
 | PHASE 10 (publication) | **bloquée** (keystore release, visuels) | — |
 | Planche d'assets | découpée (57 pièces) | `assets/ui/sliced/` + `export/planche_assets.html` |
 | APK de test | 51,5 Mo, **signé**, à jour | `export/guerriere-abomey-debug.apk` |
+| Versionnage | dépôt `main` à jour | <https://github.com/EudesJohn/jeux> |
 
 ## 2. Problèmes trouvés et corrigés
 
@@ -73,8 +74,12 @@ Mis à jour le 18 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
 
 ## 4. Dette et limites techniques
 
-- **Pas de dépôt git** : aucun historique, aucun diff, aucune sauvegarde. C'est
-  le risque le plus lourd ; `git init` + premier commit reste à faire.
+- **Dépôt git** : créé le 19 octobre 2026, premier commit `4edfc92` poussé sur
+  <https://github.com/EudesJohn/jeux> (branche `main`). Le `.gitignore` laisse
+  dehors le cache `.godot/`, les APK/AAB, les clés (`*.keystore`) et les sources
+  lourdes (`*.blend`, `*.psd`) : 457 fichiers, 7,9 Mo, pas de fichier > 1 Mo.
+  La copie non versionnée de `D:/Jeux Benin` n'est **pas**
+  ce dépôt : le dépôt est `guerriere-abomey-3d/`, où se trouve `project.godot`.
 - **Export glTF de Godot sans animations** : les `AnimationPlayer` ne sont pas
   transportés. Les modèles animés doivent venir de Blender ; l'aller-retour du
   test ne prouve que géométrie et matériaux.

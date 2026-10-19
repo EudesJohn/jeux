@@ -38,6 +38,9 @@ var role: String = "soldier"
 ## s'ouvre après son attaque lourde (§ 9 : 0,9 s).
 @export var armor: bool = false
 @export var vulnerable_time: float = 0.9
+## ANNEXE §7.2 : couleur du télégraphe ("white", "yellow", "red").
+## Blanc : garde possible. Jaune : garde parfaite seulement. Rouge : esquive.
+@export_enum("white", "yellow", "red") var attack_danger: String = "white"
 ## Chef : buff +20 % de vitesse aux alliés proches et invoque un soldat / 12 s.
 @export var buff_allies: bool = false
 @export var buff_mult: float = 1.2

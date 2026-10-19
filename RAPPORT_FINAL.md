@@ -127,14 +127,20 @@ d'ennemis pré-instanciés le supprimerait (à faire, non fait ici).
 - **Aucun modèle `.glb`** : la chaîne Blender est testée, mais elle attend les
   fichiers du modeleur (budgets 6 000 / 3 500 / 5 000 / 9 000 / 800 / 2 000).
 - **Coop non mesurée** : il faut deux téléphones.
-- **Version `0.1.0` / code 1** : à incrémenter avant tout envoi sur Play.
-- **Pas de keystore de release** : l'AAB Play est impossible en l'état.
+- **Version `0.8.0` / code 8** : cohérente avec les phases livrées ; à
+  incrémenter à chaque nouvel envoi sur Play.
+- **AAB Play** : produit et signé (`export/guerriere-abomey-0.8.0.aab`), mais
+  pas encore envoyé sur la Play Console.
 - Les chiffres ci-dessus viennent d'un APK debug, avec le moteur en mode debug
   (plus lent qu'un build release) : le release sera au mieux égal.
 
 Actions humaines restantes :
 1. Fournir les modèles `.glb` à `assets/models/` (l'outillage Blender est prêt).
 2. Nommer les 57 pièces de la planche (`assets/ui/source/planche_assets.noms.txt`).
-3. Créer la clé de signature de release pour l'AAB Google Play.
-4. Héberger `docs/POLITIQUE_CONFIDENTIALITE.md` et coller son URL dans Play Console.
+3. Activer GitHub Pages (branche `main`, dossier `/docs`) et coller l'URL dans
+   Play Console — la page et `docs/index.md` sont prêts.
+4. Envoyer `export/guerriere-abomey-0.8.0.aab` en piste de test interne.
 5. Faire le test coop à deux téléphones (tout le reste est automatisé).
+
+Déjà fait le 19 octobre : clé de release + sauvegarde, preset `Android AAB`,
+AAB signé et vérifié, 4 captures du store (`export/shots/play/`).

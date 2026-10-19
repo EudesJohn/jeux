@@ -142,20 +142,27 @@ Réponses exactes, cohérentes avec la politique :
 ## 6. Version à publier
 
 `version/name` et `version/code` sont dans `export_presets.cfg`
-(actuellement `0.1.0` / `1`). À incrémenter à chaque envoi : Google Play refuse
-un code déjà utilisé. Un **AAB signé** est requis — voir `ETAT.md` § 3.5 : la clé
-de release n'existe pas encore.
+(actuellement `0.8.0` / `8`). À incrémenter à chaque envoi : Google Play refuse
+un code déjà utilisé. L'**AAB signé** est produit par `bash tools/build_aab.sh`
+(clé et procédure : `docs/SIGNATURE_RELEASE.md`).
+
+**Visuels** : 4 captures 1280×720 dans `export/shots/play/` (menu, arène, boss,
+victoire), générées par `tests/StoreShots.tscn`. Il faut au minimum 2 captures
+de téléphone ; celles-ci conviennent pour la fiche.
 
 ## 7. Héberger la politique de confidentialité
 
 Google Play exige une **URL publique**. Le fichier
-`docs/POLITIQUE_CONFIDENTIALITE.md` peut être publié tel quel :
+`docs/POLITIQUE_CONFIDENTIALITE.md` est publié tel quel :
 
-- GitHub Pages du dépôt public <https://github.com/EudesJohn/jeux> :
-  activer *Settings → Pages* sur la branche `main`, dossier `/docs`, puis
-  utiliser `https://eudesjohn.github.io/jeux/POLITIQUE_CONFIDENTIALITE.html`
-  (ajouter un fichier `docs/index.md` qui pointe vers la politique) ;
-- ou n'importe quelle page statique.
+- GitHub Pages du dépôt <https://github.com/EudesJohn/jeux> :
+  activer *Settings → Pages* sur la branche `main`, dossier `/docs`.
+  `docs/index.md` sert de page d'accueil et pointe vers la politique ;
+  l'URL à coller dans la Play Console est
+  `https://eudesjohn.github.io/jeux/POLITIQUE_CONFIDENTIALITE.html` ;
+- GitHub Pages n'est gratuit que pour un dépôt **public** ; si le dépôt reste
+  privé, héberger le fichier sur n'importe quelle page statique et coller
+  cette URL-là.
 
 L'URL exacte obtenue doit être recopiée dans la Play Console **et** dans
 `RAPPORT_FINAL.md`.

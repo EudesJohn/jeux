@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DifficultyTier" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/DifficultyTier.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "eternelle"
+display_name = "Éternelle"
+description = "Une vie par chapitre, aucune réapparition, une potion, boss à cinq phases."
+enemy_health_mult = 2.2
+enemy_damage_mult = 2.0
+aggression = 1.0
+max_potions = 1
+checkpoints_in_boss = false
+one_life_per_chapter = true
+elite_chance = 0.45
+max_elite_affixes = 2
+boss_phase_count = 5
+frame_color = Color(0.16,0.14,0.12, 1)

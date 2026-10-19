@@ -1,6 +1,15 @@
 # État du projet et problèmes connus
 
-Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
+Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée,
+fondations de l'annexe 6B/6C/6D/7B/8B livrées).
+
+État au 19 octobre (fin de journée) : **les 12 scènes de test ressortent en
+code 0** (phases 1→9 + 6B/7B/8B, 1 508 vérifications), la musique de guerre
+africaine est branchée dans le jeu, la version passe en **0.8.0 / code 8** et
+la **politique de confidentialité du PHASE 10 est rédigée**
+(`docs/POLITIQUE_CONFIDENTIALITE.md`, français + anglais), la **clé de release
+existe** et l'**AAB signé** est produit (51,3 Mo), et les **4 captures du store**
+sont générées (`export/shots/play/`).
 
 ## 1. Où en est le projet
 
@@ -8,9 +17,16 @@ Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
 |---|---|---|
 | PHASE 0 à 8 | terminées | Phases 1→8 : 1 190 vérifications, 0 échec |
 | PHASE 9 (modèles réels) | chaîne prête, **modèles absents** | `tests/Phase9Test.tscn` : 31/0 |
-| PHASE 10 (publication) | **bloquée** (keystore release, visuels) | — |
+| Annexe 6B/6C/6D | armes, 15 talents, 6 sets, apparence | `tests/Phase6BTest.tscn` : 142/0 |
+| Annexe 7B | foule MultiMesh, caméra spectateur, rôles, arène | `tests/Phase7BTest.tscn` : 49/0 |
+| Annexe 8B | 4 paliers, code couleur, 7 affixes d'élite | `tests/Phase8BTest.tscn` : 96/0 |
+| Musique | 4 boucles originales de 19,2 s (tambours 12/8), branchées : thème menu + 3 couches superposées par intensité | `docs/MUSIQUE.md` |
+| Annexe — reste | movesets, PvP joué, forge, écrans de talents | `docs/ANNEXE_AVANCEMENT.md` |
+| PHASE 10 (publication) | politique de confidentialité, clé release, AAB signé, captures **faits** ; reste l'URL publique et l'envoi en Play Console | `docs/SIGNATURE_RELEASE.md` |
 | Planche d'assets | découpée (57 pièces) | `assets/ui/sliced/` + `export/planche_assets.html` |
-| APK de test | 51,5 Mo, **signé**, à jour | `export/guerriere-abomey-debug.apk` |
+| APK de test | 53,9 Mo, **signé**, 0.8.0 / code 8, musique incluse | `export/guerriere-abomey-debug.apk` |
+| AAB Play | 51,3 Mo, **signé clé release**, 0.8.0 / code 8 | `export/guerriere-abomey-0.8.0.aab` |
+| Captures store | 4 PNG 1280×720 (menu, arène, boss, victoire) | `export/shots/play/` |
 | Versionnage | dépôt `main` à jour | <https://github.com/EudesJohn/jeux> |
 
 ## 2. Problèmes trouvés et corrigés
@@ -73,11 +89,21 @@ Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
    `assets/ui/source/planche_assets.noms.txt`, relancer avec `--names=… --clean`.
 3. **57 PNG inutilisés dans l'APK** (+≈2,8 Mo). À exclure (`assets/ui/sliced/*`)
    tant qu'aucun écran ne s'en sert, ou à brancher.
-4. **Version `0.1.0`, code 1** alors que les phases 8-9 sont livrées : à décider
-   (ex. `0.8.0` / code 8) avant tout partage.
-5. **Aucune clé de release** : AAB Google Play impossible (PHASE 10).
-6. **Politique de confidentialité et captures d'écran** absentes (PHASE 10) ;
-   il manque le nom/contact de l'éditeur pour les rédiger.
+4. ~~**Version `0.1.0`, code 1**~~ **RÉSOLU (19 octobre)** : version passée en
+   `0.8.0`, code 8 (`project.godot` + `export_presets.cfg`), cohérente avec les
+   phases 8-9 livrées.
+5. ~~**Aucune clé de release**~~ **RÉSOLU (19 octobre)** : clé créée dans
+   `export/android/guerriere-release.keystore` (hors git, sauvegardée dans
+   `~/Documents/Guerriere-Abomey-BACKUP/`), preset `Android AAB` et
+   `tools/build_aab.sh` ; AAB signé produit et vérifié au `keytool`.
+   Voir `docs/SIGNATURE_RELEASE.md`.
+6. **Politique de confidentialité** : le texte est rédigé
+   (`docs/POLITIQUE_CONFIDENTIALITE.md`, FR + EN), `docs/index.md` prépare
+   GitHub Pages ; il reste à activer *Settings → Pages* (branche `main`,
+   dossier `/docs`) et à coller l'URL `https://eudesjohn.github.io/jeux/
+   POLITIQUE_CONFIDENTIALITE.html` dans la Play Console. Les 4 captures sont
+   prêtes. Le jeu étant 100 % hors ligne, aucune donnée ne doit être déclarée
+   dans le formulaire Play (voir le § 4 de la politique).
 7. **Aucun test sur téléphone ici** : tout est validé en `--headless` (les
    contrôles tactiles simulés y sont ignorés). FPS, triangles et draw calls
    réels restent à mesurer sur l'itel S667LN.
@@ -120,6 +146,11 @@ Mis à jour le 19 octobre 2026 (PHASE 8 terminée, PHASE 9 préparée).
 for p in 1 2 3 4 5 6 7 8 9; do
   godot --headless --path . res://tests/Phase${p}Test.tscn
 done
+
+# Fondations de l'annexe (armes, foule, difficulté)
+godot --headless --path . res://tests/Phase6BTest.tscn
+godot --headless --path . res://tests/Phase7BTest.tscn
+godot --headless --path . res://tests/Phase8BTest.tscn
 
 # Budgets des modèles (code 1 si dépassement ou fichier illisible)
 godot --headless --path . --script res://tools/check_model_budgets.gd

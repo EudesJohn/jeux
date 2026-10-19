@@ -41,5 +41,13 @@ signal boss_spawned(boss: Node)
 signal boss_defeated(boss: Node)
 signal boss_health_changed(current: float, maximum: float)
 
+## ANNEXE §2 : arènes. `crowd_event` porte une variation d'excitation (0..1)
+## émise par les coups, gardes parfaites et KO ; la foule et l'audio l'écoutent.
+signal crowd_event(amount: float)
+signal excitement_changed(value: float)
+## ANNEXE §2.6 : rôle accordé par l'hôte (0 = joueur, 1 = spectateur).
+signal role_assigned(role: int)
+signal lobby_full
+
 ## Vecteur du joystick virtuel (gauche de l'écran), consommé par Player3D.
 var joystick_vector: Vector2 = Vector2.ZERO

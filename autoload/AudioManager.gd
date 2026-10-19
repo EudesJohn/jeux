@@ -57,6 +57,10 @@ var current_set: StringName = &""
 var intensity: float = 0.0
 ## Nombre de sons réellement refusés faute de fichier : les tests le lisent.
 var missing_sounds: Array[StringName] = []
+## ANNEXE §2.3 : niveau de la foule (0..1), piloté par CrowdManager.
+## Aucun fichier « foule » n'est livré pour l'instant : la valeur est conservée
+## et les tests la lisent, le jour où la boucle sonore sera enregistrée.
+var crowd_level: float = 0.0
 
 var _music_layers: Dictionary = {}              ## { couche: AudioStreamPlayer }
 var _music_menu: AudioStreamPlayer = null
@@ -66,6 +70,11 @@ var _sfx_bank: Dictionary = {}                  ## { StringName: AudioStream }
 var _voice_bank: Dictionary = {}                ## { StringName: AudioStream }
 var _layer_tweens: Dictionary = {}
 var _fade_time: float = MUSIC_FADE
+
+
+## ANNEXE §2.3 : intensité de la foule (volume et vitesse des tambours).
+func set_crowd_level(value: float) -> void:
+	crowd_level = clampf(value, 0.0, 1.0)
 
 
 func _ready() -> void:

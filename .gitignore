@@ -36,3 +36,7 @@ __pycache__/
 *.tmp
 Thumbs.db
 .DS_Store
+
+# Modèle de build Android (régénéré) et clé de release (jamais versionnée)
+android/
+export/android/

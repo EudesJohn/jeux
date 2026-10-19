@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DifficultyTier" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/DifficultyTier.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "recit"
+display_name = "Récit"
+description = "Une histoire à vivre : checkpoints illimités, ennemis cléments."
+enemy_health_mult = 0.7
+enemy_damage_mult = 0.7
+aggression = 0.25
+max_potions = 5
+checkpoints_in_boss = true
+one_life_per_chapter = false
+elite_chance = 0.05
+max_elite_affixes = 0
+boss_phase_count = 3
+frame_color = Color(0.55,0.45,0.32, 1)

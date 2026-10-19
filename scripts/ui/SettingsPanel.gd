@@ -80,6 +80,15 @@ func _build() -> void:
 		Settings.set_difficulty(difficulty.get_item_metadata(index))
 	)
 
+	# ANNEXE §7 : palier de difficulté par partie (le mode historique reste
+	# disponible au-dessus pour les sauvegardes existantes).
+	var tier := _add_options_row(column, "Palier de défi",
+		["Aucun (historique)", "Récit", "Guerrière", "Légende", "Éternelle"],
+		["", "recit", "guerriere", "legende", "eternelle"], Settings.tier)
+	tier.item_selected.connect(func(index: int) -> void:
+		Settings.set_tier(tier.get_item_metadata(index))
+	)
+
 	var quality := _add_options_row(column, "Qualité graphique",
 		["Faible", "Moyenne", "Haute"], ["low", "medium", "high"],
 		Settings.quality)

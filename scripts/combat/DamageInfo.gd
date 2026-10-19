@@ -13,6 +13,9 @@ var source_position: Vector3 = Vector3.ZERO
 var source_actor: Node = null       # qui frappe (garde parfaite : § 8.4)
 var is_heavy: bool = false
 var is_critical: bool = false       # critiques : 8 %, ×1,5 (§ 8.7)
+## ANNEXE §7.2 : couleur de l'attaque (Hitbox3D.Danger). Blanc = gardable,
+## jaune = garde parfaite seulement, rouge = imparable (esquive obligatoire).
+var danger: int = 0
 ## Dégâts CONTINUS (§ 11 : le feu brûle 8 vie par seconde). Ils ignorent les
 ## i-frames de touche (sinon 1 frame sur 60 passe) mais pas l'esquive.
 var is_dot: bool = false

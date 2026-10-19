@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WeaponData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "machette"
+display_name = "Machette de guerre"
+display_key = "WEAPON_MACHETTE"
+kind = 0
+rarity = 0
+base_damage = 13.0
+attack_speed = 0.85
+reach = 1.7
+is_ranged = false
+rune_slots = 0
+possible_affixes = Array[String]([])
+price = 0

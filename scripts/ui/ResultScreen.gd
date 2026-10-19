@@ -126,7 +126,11 @@ func show_defeat(reason: String) -> void:
 	Localizer.set_text(title_label, "ÉCHEC")
 	title_label.add_theme_color_override("font_color", DANGER)
 	var label := Localizer.format_tr(String(REASONS.get(reason, reason)))
-	Localizer.set_text(detail_label, "— %s —", [label])
+	# §7.2 règle 8 : dire quelle attaque a tué, avec un conseil.
+	var advice := ""
+	if GameState.last_hit_source != "":
+		advice = "  •  %s : %s" % [GameState.last_hit_source, GameState.hit_advice()]
+	Localizer.set_text(detail_label, "— %s —%s", [label, advice])
 	_show()
 
 

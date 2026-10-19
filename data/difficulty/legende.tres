@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DifficultyTier" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/DifficultyTier.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "legende"
+display_name = "Légende"
+description = "Les ennemis se coordonnent. Pas de checkpoint en boss, trois potions, élites fréquents."
+enemy_health_mult = 1.6
+enemy_damage_mult = 1.5
+aggression = 0.8
+max_potions = 3
+checkpoints_in_boss = false
+one_life_per_chapter = false
+elite_chance = 0.25
+max_elite_affixes = 1
+boss_phase_count = 4
+frame_color = Color(0.80,0.25,0.18, 1)

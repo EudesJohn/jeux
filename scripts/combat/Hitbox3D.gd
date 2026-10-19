@@ -10,6 +10,14 @@ class_name Hitbox3D
 
 signal hit_landed(target: Node, damage: float)
 
+## ANNEXE §7.2 : code des couleurs des attaques. Le télégraphe reste le même
+## dans tous les paliers ; seule la couleur change ce qu'on peut faire.
+enum Danger { WHITE, YELLOW, RED }
+const DANGER_NAMES: Array[String] = ["blanc", "jaune", "rouge"]
+const DANGER_COLORS: Array[Color] = [
+	Color(0.92, 0.92, 0.88), Color(0.95, 0.78, 0.20), Color(0.90, 0.16, 0.12),
+]
+
 @export var damage: float = 10.0
 @export var knockback: float = 1.2   # m
 @export var hitstop: float = 0.05
@@ -17,12 +25,27 @@ signal hit_landed(target: Node, damage: float)
 @export var is_heavy: bool = false
 @export var crit_chance: float = 0.08
 @export var crit_mult: float = 1.5
+## Blanc : garde/esquive/contre. Jaune : garde parfaite ou esquive. Rouge :
+## imparable, l'esquive est la seule option (§7.2 règle 2).
+@export_enum("Blanc", "Jaune", "Rouge") var danger: int = Danger.WHITE
 
 var owner_actor: Node = null
 var already_hit: Array[Node] = []
 ## Dernier coup porté : lisible par les tests et par l'attaquant.
 var last_critical: bool = false
 var last_amount: float = 0.0
+var last_danger: int = Danger.WHITE
+
+
+## Convertit la valeur texte d'une fiche (`attack_danger`) en enum.
+static func danger_from_name(value: String) -> int:
+	match value.to_lower():
+		"yellow", "jaune":
+			return Danger.YELLOW
+		"red", "rouge":
+			return Danger.RED
+		_:
+			return Danger.WHITE
 
 
 func _ready() -> void:
@@ -62,6 +85,11 @@ func _on_area_entered(area: Area3D) -> void:
 	info.source_actor = owner_actor
 	info.is_heavy = is_heavy
 	info.is_critical = last_critical
+	info.danger = danger
+	last_danger = danger
+	# §7.2 règle 8 : l'écran de mort saura quelle attaque a touché.
+	if area.owner_actor is Player3D:
+		GameState.register_player_hit(danger, String(area.owner_actor.name))
 
 	# § 22.1 : seul l'hôte applique les dégâts. Les coups de l'invitée lui sont
 	# envoyés (les ennemis et leur vie appartiennent à l'hôte).

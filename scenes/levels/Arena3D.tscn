@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/level/Arena3D.gd" id="1"]
+
+[node name="Arena3D" type="Node3D"]
+script = ExtResource("1")
+arena_radius = 13.0
+crowd_rows = 6
+first_row_radius = 15.0
+ambiance = "royale"

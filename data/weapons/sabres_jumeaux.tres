@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WeaponData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "sabres_jumeaux"
+display_name = "Sabres jumeaux"
+display_key = "WEAPON_TWIN_SABRES"
+kind = 1
+rarity = 1
+base_damage = 8.0
+attack_speed = 1.5
+reach = 1.4
+is_ranged = false
+rune_slots = 0
+possible_affixes = Array[String]([])
+price = 0

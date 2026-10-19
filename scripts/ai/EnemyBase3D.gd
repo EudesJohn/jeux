@@ -82,6 +82,11 @@ var _materials: Array[ShaderMaterial] = []
 var _tints: Array[Color] = []
 var _aim_line: MeshInstance3D = null
 var _culling_active: bool = false
+## ANNEXE §7.3 : affixes d'élite (vide = ennemi normal).
+var elite_affixes: Array[String] = []
+var _elite_shield: int = 0
+var _elite_summon_left: float = 0.0
+const ELITE_COLOR: Color = Color(0.96, 0.78, 0.22)
 
 
 # -----------------------------------------------------------------#
@@ -107,8 +112,31 @@ func _ready() -> void:
 	# Les critiques (§ 8.7) sont celles de la JOUEUSE : un ennemi n'en fait pas.
 	hitbox.crit_chance = 0.0
 	_setup_model()
+	_apply_elite()
 	_setup_aim_line()
 	_setup_culling()
+
+
+## ANNEXE §7.3 : sous un palier de difficulté, un ennemi peut naître élite.
+## Aucun palier (sauvegardes existantes) = aucun élite : les tests et les
+## niveaux actuels gardent exactement les mêmes statistiques.
+func _apply_elite() -> void:
+	if GameState.tier == null:
+		return
+	if randf() >= GameState.elite_chance():
+		return
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	elite_affixes = EliteAffix.roll(GameState.max_elite_affixes(), rng)
+	if elite_affixes.is_empty():
+		return
+	add_to_group("elites")
+	max_health *= 1.35
+	health = max_health
+	hitbox.damage *= 1.15
+	_elite_shield = EliteAffix.shield_charges(elite_affixes)
+	_elite_summon_left = EliteAffix.summon_period(elite_affixes)
+	_restore_tint()
 
 
 ## § 25 : hors écran, l'ennemi ne calcule plus son IA. Sur un téléphone, une
@@ -448,7 +476,10 @@ func _begin_telegraph() -> void:
 	_state_time = 0.0
 	playing_hit = true
 	hitbox.damage = data.damage * GameState.difficulty_damage_mult() * GameState.enemy_damage_mult()
-	_set_tint(TELEGRAPH_COLOR)
+	# ANNEXE §7.2 : le flash du télégraphe prend la couleur de l'attaque
+	# (blanc gardable, jaune garde parfaite, rouge imparable).
+	hitbox.danger = Hitbox3D.danger_from_name(data.attack_danger)
+	_set_tint(Hitbox3D.DANGER_COLORS[hitbox.danger])
 	if is_instance_valid(target):
 		_face_toward(target)
 	_play("attack1")
@@ -578,6 +609,13 @@ func _tick_officer(delta: float) -> void:
 		if _summon_left <= 0.0:
 			_summon_left = data.summon_period
 			summons.emit(self, data.summon_type, global_position - _forward() * 2.0)
+	# §7.3 : un élite « Invocateur » appelle un soldat toutes les 10 s.
+	var elite_period := EliteAffix.summon_period(elite_affixes)
+	if elite_period > 0.0:
+		_elite_summon_left -= delta
+		if _elite_summon_left <= 0.0:
+			_elite_summon_left = elite_period
+			summons.emit(self, "soldier", global_position - _forward() * 2.0)
 
 
 ## Buff de vitesse d'un chef (§ 9 : +20 % pour les alliés proches).
@@ -594,8 +632,10 @@ func apply_slow(multiplier: float, duration: float) -> void:
 
 ## Vitesse courante, buffs du chef et boue compris.
 func speed_now() -> float:
-	## § 12.5 : « ennemis rapides » du Défi du jour.
-	return data.speed * buff_mult * slow_mult * GameState.enemy_speed_mult()
+	## § 12.5 : « ennemis rapides » du Défi du jour ; §7.3 : Rapide / Enragé.
+	var ratio := health / maxf(max_health, 0.001)
+	return data.speed * buff_mult * slow_mult * GameState.enemy_speed_mult() \
+		* EliteAffix.speed_mult(elite_affixes, ratio)
 
 
 # -----------------------------------------------------------------#
@@ -609,6 +649,11 @@ func on_hit_received(info: DamageInfo) -> int:
 	# reflet : elle ne décide ni des dégâts, ni de la mort.
 	if Network.is_coop() and not Network.is_host():
 		return Hurtbox3D.Result.DODGED
+	# §7.3 : le Bouclier d'esprit absorbe une série de coups.
+	if _elite_shield > 0 and not info.is_dot:
+		_elite_shield -= 1
+		FX.impact(_world(), global_position + Vector3(0.0, 1.2, 0.0), "block")
+		return Hurtbox3D.Result.BLOCKED
 	# Brute (§ 9) : l'armure bloque les coups LÉGERS hors fenêtre de vulnérabilité.
 	if data.blocks_hit(info.is_heavy, vulnerable_left > 0.0):
 		FX.impact(_world(), global_position + Vector3(0.0, 1.0, 0.0), "block")
@@ -620,10 +665,13 @@ func on_hit_received(info: DamageInfo) -> int:
 		if health <= 0.0:
 			_die()
 		return Hurtbox3D.Result.HIT
-	health = maxf(0.0, health - info.amount)
+	# §7.3 : Blindé réduit les dégâts de 40 % tant qu'il n'est pas étourdi.
+	var amount := info.amount * EliteAffix.damage_taken_mult(
+		elite_affixes, _stun_left > 0.0)
+	health = maxf(0.0, health - amount)
 	# § 17 : le son de l'ennemi est positionnel (portée courte, 8 voix max).
 	AudioManager.play_sfx_at(self, &"hurt", randf_range(0.92, 1.08))
-	FX.damage_number(_world(), global_position + Vector3(0.0, 1.7, 0.0), info.amount,
+	FX.damage_number(_world(), global_position + Vector3(0.0, 1.7, 0.0), amount,
 		"crit" if info.is_critical else "normal")
 	_flash_tint()
 	var away := _flat(global_position - info.source_position)
@@ -647,6 +695,13 @@ func _die() -> void:
 	state = State.DEAD
 	_abort_attack(true)
 	remove_from_group("enemies")
+	remove_from_group("elites")
+	# §7.3 : Explosif laisse une zone rouge au sol en mourant.
+	var blast := EliteAffix.explosion(elite_affixes)
+	if not blast.is_empty():
+		DangerZone3D.spawn(get_parent(), global_position, float(blast["radius"]),
+			data.damage * float(blast["damage"]) * GameState.difficulty_damage_mult(),
+			0.5, self, Hitbox3D.Danger.RED)
 	_play("death")
 	died.emit(self, maxi(0, data.drops_cauris))
 	Events.enemy_died.emit(self)
@@ -738,6 +793,10 @@ func _flash_tint() -> void:
 
 
 func _restore_tint() -> void:
+	# Un élite garde un liseré doré reconnaissable même hors télégraphe.
+	if not elite_affixes.is_empty():
+		_set_tint(ELITE_COLOR)
+		return
 	for i in _materials.size():
 		_materials[i].set_shader_parameter("tint", _tints[i])
 

@@ -108,7 +108,8 @@ func _ready() -> void:
 	guard_stability = balance.guard_stability_max
 	hurtbox.owner_actor = self
 	hitbox.owner_actor = self
-	hitbox.crit_chance = balance.crit_chance
+	hitbox.crit_chance = balance.crit_chance + SaveManager.attribute_crit_bonus() \
+		+ SaveManager.skill_stat("crit")
 	hitbox.crit_mult = balance.crit_mult
 	hitbox.hit_landed.connect(_on_hit_landed)
 	combo.configure(balance)
@@ -412,7 +413,9 @@ func _state_attack(delta: float) -> void:
 		hitbox.hitstop = float(step["hitstop"])
 		hitbox.shake_strength = float(step["shake"])
 		# Relus à chaque coup : les réglages à chaud (§ 28) s'appliquent aussitôt.
-		hitbox.crit_chance = balance.crit_chance
+		hitbox.crit_chance = balance.crit_chance + SaveManager.attribute_crit_bonus() \
+			+ SaveManager.skill_stat("crit") + SaveManager.attribute_crit_bonus() \
+		+ SaveManager.skill_stat("crit")
 		hitbox.crit_mult = balance.crit_mult
 		if not hitbox.monitoring:
 			hitbox.activate()
@@ -636,10 +639,21 @@ func on_hit_received(info: DamageInfo) -> int:
 		_apply_damage(info.amount)                 # pas de stun, pas de recul
 		return Hurtbox3D.Result.HIT
 	if state == State.GUARD:
-		if guard_perfect_left > 0.0:
+		# ANNEXE §7.2 : rouge = imparable, la garde cède et le coup passe en
+		# entier ; jaune = seule la garde PARFAITE tient (sinon la garde casse).
+		if info.danger == Hitbox3D.Danger.RED:
+			guard_stability = 0.0
+			Events.guard_broken.emit(self)
+		elif guard_perfect_left > 0.0:
 			_perfect_guard(info)                        # § 8.4
 			return Hurtbox3D.Result.PERFECT_GUARD
-		return _block(info)
+		elif info.danger == Hitbox3D.Danger.YELLOW:
+			var blocked := _block(info)
+			if state == State.GUARD:
+				_break_guard()
+			return blocked
+		else:
+			return _block(info)
 	_apply_damage(info.amount)
 	if state != State.DEAD:
 		state = State.HURT
@@ -803,12 +817,18 @@ func reset_for_level() -> void:
 
 ## Vie maximale réelle : base du § 8.1 + « Vitalité » de l'armurerie (§ 14.4).
 func max_health_value() -> float:
-	return balance.max_health + SaveManager.upgrade_bonus("vitalite")
+	# §4.2 : +8 vie par point de Vitalité, en plus de l'armurerie.
+	return balance.max_health + SaveManager.upgrade_bonus("vitalite") \
+		+ 8.0 * float(SaveManager.attribute_value("vitalite"))
 
 
-## Dégâts de base × multiplicateur du combo × « Force » de l'armurerie.
+## Dégâts de base × multiplicateur du combo × « Force » de l'armurerie
+## × arme équipée (ANNEXE §3 : rareté, niveau d'amélioration, affixes).
 func _attack_damage(mult: float) -> float:
-	return balance.base_damage * mult * SaveManager.damage_multiplier() * run_damage_mult
+	return balance.base_damage * mult * SaveManager.damage_multiplier() \
+		* SaveManager.equipped_damage_mult() \
+		* Progression.force_mult(SaveManager.attribute_value("force")) \
+		* run_damage_mult
 
 
 ## Téléporte la joueuse sur un point de réapparition (checkpoint du § 13).

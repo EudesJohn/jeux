@@ -14,6 +14,12 @@ extends Node
 const GAME_PORT: int = 7777
 const DISCOVERY_PORT: int = 7778
 const MAX_CLIENTS: int = 1                 ## § 22 : 2 joueuses au total
+## ANNEXE §2.6 : arènes. 2 joueurs + 4 spectateurs au maximum (un hotspot de
+## téléphone tient ~6 appareils).
+const MAX_PLAYERS: int = 2
+const MAX_SPECTATORS: int = 4
+
+enum Role { PLAYER, SPECTATOR }
 const GAME_ID: String = "GUERRIERE_ABOMEY_3D_v1"
 const REFRESH_MS: int = 5000               ## une partie vue est valable 5 s
 
@@ -33,6 +39,9 @@ var discovered: Dictionary = {}          ## { ip: {name, time} }
 var host_name: String = "Nawi"
 var is_hosting: bool = false
 var peer_ids: Array[int] = []            ## pairs connectés (hors nous)
+## peer_id -> Role. L'hôte (1) est joueur ; un nouveau pair arrive spectateur
+## et demande son rôle : l'hôte décide, jamais le client.
+var roles: Dictionary = {1: Role.PLAYER}
 
 
 # -----------------------------------------------------------------#
@@ -85,18 +94,86 @@ func coop_max_on_screen() -> int:
 
 
 # -----------------------------------------------------------------#
+#                    RÔLES JOUEUR / SPECTATEUR                       #
+# -----------------------------------------------------------------#
+
+## Décision pure de l'hôte : le rôle demandé n'est accordé que s'il reste une
+## place ; sinon on reste spectateur, et on est refusé si tout est plein.
+## Renvoie -1 quand la partie est complète (l'appelant émet `kick_full`).
+static func decide_role(wanted: int, players: int, spectators: int) -> int:
+	if wanted == Role.PLAYER and players < MAX_PLAYERS:
+		return Role.PLAYER
+	if spectators < MAX_SPECTATORS:
+		return Role.SPECTATOR
+	return -1
+
+
+func role_of(id: int) -> int:
+	return int(roles.get(id, Role.SPECTATOR))
+
+
+func is_spectator(id: int = 0) -> bool:
+	var who := id if id != 0 else local_id()
+	return role_of(who) == Role.SPECTATOR
+
+
+func player_roles() -> Array[int]:
+	var out: Array[int] = []
+	for id in roles:
+		if int(roles[id]) == Role.PLAYER:
+			out.append(int(id))
+	return out
+
+
+func spectator_roles() -> Array[int]:
+	var out: Array[int] = []
+	for id in roles:
+		if int(roles[id]) == Role.SPECTATOR:
+			out.append(int(id))
+	return out
+
+
+## Le client demande un rôle ; l'hôte est autoritaire (ANNEXE §2.6).
+@rpc("any_peer", "call_remote", "reliable")
+func request_role(wanted: int) -> void:
+	if not multiplayer.is_server():
+		return
+	var sender := multiplayer.get_remote_sender_id()
+	var granted := decide_role(wanted, player_roles().size(), spectator_roles().size())
+	if granted < 0:
+		kick_full.rpc_id(sender)
+		return
+	roles[sender] = granted
+	role_granted.rpc_id(sender, granted)
+
+
+@rpc("authority", "call_remote", "reliable")
+func role_granted(role: int) -> void:
+	roles[local_id()] = role
+	Events.role_assigned.emit(role)
+
+
+@rpc("authority", "call_remote", "reliable")
+func kick_full() -> void:
+	Events.lobby_full.emit()
+
+
+# -----------------------------------------------------------------#
 #                        CONNEXION                                   #
 # -----------------------------------------------------------------#
 
-func host_game() -> void:
+## `extra_seats` ouvre des places de spectateurs en plus de la coop (ANNEXE
+## §2.6). Sans argument, le comportement de la PHASE 7 est inchangé.
+func host_game(extra_seats: int = 0) -> void:
 	var peer := ENetMultiplayerPeer.new()
-	if peer.create_server(GAME_PORT, MAX_CLIENTS) != OK:
+	if peer.create_server(GAME_PORT, MAX_CLIENTS + maxi(0, extra_seats)) != OK:
 		connection_failed.emit()
 		return
 	multiplayer.multiplayer_peer = peer
 	_connect_signals()
 	is_hosting = true
 	peer_ids.clear()
+	roles = {1: Role.PLAYER}
 	_start_broadcast()
 	lobby_message.emit("En attente d'une joueuse… IP : %s" % get_local_ip())
 
@@ -133,6 +210,7 @@ func leave() -> void:
 	multiplayer.multiplayer_peer = null
 	is_hosting = false
 	peer_ids.clear()
+	roles = {1: Role.PLAYER}
 	discovered.clear()
 
 
@@ -295,12 +373,17 @@ func _process(_delta: float) -> void:
 func _on_peer_connected(id: int) -> void:
 	if not peer_ids.has(id):
 		peer_ids.append(id)
+	# Arrivée en spectateur par défaut : `request_role` peut ensuite donner
+	# une place de joueur si l'hôte en a encore une.
+	if is_host() and not roles.has(id):
+		roles[id] = Role.SPECTATOR
 	lobby_message.emit("Joueuse %d connectée." % id)
 	peer_joined.emit(id)
 
 
 func _on_peer_disconnected(id: int) -> void:
 	peer_ids.erase(id)
+	roles.erase(id)
 	lobby_message.emit("Joueuse %d déconnectée." % id)
 	peer_left.emit(id)
 

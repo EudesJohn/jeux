@@ -78,6 +78,21 @@ réelles, vérifiées sur l'itel S667LN (720×1612, Android) :
 Parcours rejoué au doigt sur le téléphone : menu → Jouer → Aventure → carte →
 niveau 1 → joystick (déplacement réel) → pause → Reprendre.
 
+ANNEXE (arènes, armes, progression, personnalisation, difficulté) : les
+fondations des blocs **6B / 6C / 6D / 7B / 8B** sont livrées et testées —
+`WeaponData` + 11 fiches d'armes, affixes et amélioration, formules de niveau
+et de dégâts, `CharacterLook`, `CrowdManager` (un MultiMesh, 60/150/300
+spectateurs, shader GPU), `SpectatorCamera`, rôles joueur/spectateur, et les
+**4 paliers de difficulté** avec le code blanc/jaune/rouge des attaques.
+Une arène jouable (`scenes/levels/Arena3D.tscn`) monte la foule, et les
+**7 affixes d'élite** sont réellement appliqués. La musique est une partition
+originale de tambours ouest-africains (4 boucles de 19,2 s, cloche 12/8) :
+`tools/generate_music.py`, détail dans `docs/MUSIQUE.md`.
+Les tests `Phase6BTest` (142), `Phase7BTest` (49) et `Phase8BTest` (96)
+sortent en code 0. Ce qui reste partiel (movesets des 8 armes, PvP joué,
+forge, écrans de talents) est listé sans ambiguïté dans
+`docs/ANNEXE_AVANCEMENT.md`.
+
 PHASE 1 (joueuse jouable) : arène de test complète validée par
 `tests/Phase1Test.tscn` (61 vérifications), lancée sur téléphone (60 FPS).
 
@@ -127,12 +142,36 @@ godot --headless --path . --export-debug "Android" export/guerriere-abomey-debug
 Installation sur téléphone branché : `adb install -r export/guerriere-abomey-debug.apk`
 (`adb` est dans `platform-tools` du SDK Android ; `-r` remplace l'installation précédente).
 
-## D. Clé de release (à faire PLUS TARD, en PHASE 10 seulement)
+## D. AAB Google Play (clé de release)
+
+La clé existe depuis le 19 octobre 2026 : `export/android/guerriere-release.keystore`,
+alias `guerriere`, mot de passe dans `export/android/.pass` (les deux **hors Git**,
+sauvegardés dans `~/Documents/Guerriere-Abomey-BACKUP/`). Procédure complète :
+`docs/SIGNATURE_RELEASE.md`.
 
 ```bash
-keytool -genkeypair -v -keystore release.keystore -alias guerriere -keyalg RSA -keysize 2048 -validity 10000
+bash tools/build_aab.sh          # → export/guerriere-abomey-0.8.0.aab
 ```
-⚠️ Sauvegarde `release.keystore` + mot de passe hors du PC et **hors Git** : sans eux, aucune mise à jour Google Play possible. Ainsi `export/release.keystore` doit rester hors Git.
+
+Le script injecte le mot de passe dans le preset `Android AAB` le temps de
+l'export, puis restaure `export_presets.cfg` (qui reste versionné sans secret).
+
+Prérequis : **JDK 17** (Gradle 8.2 refuse Java 21+), Android SDK, modèle de
+build `android/` (`godot --headless --path . --install-android-build-template`)
+et build-tools 34.0.0 — ou aligner `versions.buildTools` dans
+`android/build/config.gradle` sur une révision installée.
+
+⚠️ Sauvegarder la clé et son mot de passe hors du PC : sans eux, aucune mise à
+jour Google Play n'est possible.
+
+## D bis. Captures pour la fiche Play
+
+```bash
+godot --path . --resolution 1280x720 res://tests/StoreShots.tscn
+```
+
+Quatre PNG 1280×720 dans `export/shots/play/` (menu, arène, boss, victoire),
+pris sur les vraies scènes du jeu.
 
 ## E. Checklist PHASE 0 (à cocher sur téléphone)
 
@@ -526,12 +565,14 @@ la connexion et vérifie que le solo n'a pas bougé.
   `load()` en plein combat. Le pool de 12 `AudioStreamPlayer` évite de couper un
   son quand un autre démarre ; les voix positionnelles sont limitées à **8**,
   portée 14 m, sans réverbération (§ 25).
-- **Musique dynamique** : les 3 couches (`layer_calm`, `layer_tension`,
-  `layer_combat`, même tempo, boucle de 4,80 s) démarrent ensemble et restent
-  alignées à l'échantillon ; l'intensité (ennemis à l'écran, vie) fait monter
-  la 2ᵉ puis la 3ᵉ couche avec un **crossfade de 0,5 s**. Les WAV sont
-  synthétisés par `python tools/generate_audio.py` (aucun enregistrement réel
-  n'existe encore) et rebouclés dans le code, ce qui marche aussi dans l'APK.
+- **Musique dynamique** : thème de menu (`music_menu`) puis 3 couches
+  (`layer_calm`, `layer_tension`, `layer_combat`, même tempo, boucle de
+  **19,2 s**) qui démarrent ensemble et restent alignées à l'échantillon ;
+  l'intensité (ennemis à l'écran, vie) fait monter la 2ᵉ puis la 3ᵉ couche avec
+  un **crossfade de 0,5 s**. Partition originale de tambours ouest-africains
+  (cloche 12/8, djembé, dundun, balafon, chant) synthétisée par
+  `python tools/generate_music.py` — voir `docs/MUSIQUE.md` ; les WAV sont
+  rebouclés dans le code, ce qui marche aussi dans l'APK.
 - **Sous-titres** (§ 17) : `AudioManager.play_voice(&"level_start")` émet
   toujours `voice_line` ; le sous-titre s'affiche **même sans fichier audio**.
   Les emplacements (`assets/audio/voice/`, fr / en / fon) attendent des

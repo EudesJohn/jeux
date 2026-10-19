@@ -314,9 +314,26 @@ func _begin_telegraph(kind: String) -> void:
 	if is_instance_valid(target):
 		_face_toward(target)
 		_charge_dir = _flat(target.global_position - global_position).normalized()
-	# Télégraphe lisible (§ 9) : le modèle flashe en rouge.
-	_set_tint(TELEGRAPH_COLOR)
+	# Télégraphe lisible (§ 9) + code des couleurs (ANNEXE §7.2).
+	_hitbox.danger = _danger_for(kind)
+	_set_tint(Hitbox3D.DANGER_COLORS[_hitbox.danger])
 	_flash_left = data.telegraph_for_phase(phase)
+
+
+## Couleur de l'attaque (§7.2) : la charge et la frappe au sol sont
+## imparables (esquive), le balayage et les flèches se parent parfaitement.
+static func _danger_for(kind: String) -> int:
+	match kind:
+		"charge", "slam", "orbs":
+			return Hitbox3D.Danger.RED
+		"sweep", "arrows", "teleport":
+			return Hitbox3D.Danger.YELLOW
+		_:
+			return Hitbox3D.Danger.WHITE
+
+
+func _danger_color(kind: String) -> Color:
+	return Hitbox3D.DANGER_COLORS[_danger_for(kind)]
 
 
 ## Applique l'attaque choisie. Chaque attaque pose ses zones de danger AVANT de
@@ -327,6 +344,8 @@ func _execute(kind: String) -> void:
 	_restore_tint()
 	var zone_damage := data.damage * GameState.difficulty_damage_mult()
 	var warn := 0.45
+	var danger := _danger_for(kind)
+	_hitbox.danger = danger
 	match kind:
 		"charge":
 			_charge_left = data.charge_distance
@@ -334,17 +353,17 @@ func _execute(kind: String) -> void:
 			# Traînée de zones sur la trajectoire de la charge.
 			for i in 3:
 				var at := global_position + _charge_dir * (data.charge_distance * 0.3 * float(i + 1))
-				DangerZone3D.spawn(zone_root, at, data.charge_width, zone_damage, warn, self)
+				DangerZone3D.spawn(zone_root, at, data.charge_width, zone_damage, warn, self, danger)
 			_hitbox.activate()
 			_hit_active = true
 		"sweep":
 			_attack_left = 0.5
-			DangerZone3D.spawn(zone_root, global_position, data.sweep_radius, zone_damage, warn, self)
+			DangerZone3D.spawn(zone_root, global_position, data.sweep_radius, zone_damage, warn, self, danger)
 			_hitbox.activate()
 			_hit_active = true
 		"slam":
 			_attack_left = 0.6
-			DangerZone3D.spawn(zone_root, global_position, data.slam_radius, zone_damage, warn, self)
+			DangerZone3D.spawn(zone_root, global_position, data.slam_radius, zone_damage, warn, self, danger)
 			_shake_camera(0.25)
 		"arrows":
 			_attack_left = 0.7
@@ -357,14 +376,14 @@ func _execute(kind: String) -> void:
 				var spread := 3.2 + randf() * 2.4
 				var at := center + Vector3(cos(angle) * spread, 0.0, sin(angle) * spread)
 				DangerZone3D.spawn(zone_root, at, data.arrow_radius, zone_damage * 0.8,
-					warn + 0.15, self)
+					warn + 0.15, self, danger)
 		"orbs":
 			_attack_left = 0.5
 			if is_instance_valid(target):
 				for i in 3:
 					var offset := Vector3(randf_range(-1.5, 1.5), 0.0, randf_range(-1.5, 1.5))
 					DangerZone3D.spawn(zone_root, target.global_position + offset,
-						data.sweep_radius * 0.55, zone_damage * 0.9, warn + 0.3, self)
+						data.sweep_radius * 0.55, zone_damage * 0.9, warn + 0.3, self, danger)
 		"teleport":
 			# Disparaît et réapparaît derrière la joueuse, lame déjà levée.
 			_attack_left = 0.5
@@ -374,7 +393,7 @@ func _execute(kind: String) -> void:
 				global_position = behind
 				_face_toward(target)
 			DangerZone3D.spawn(zone_root, global_position, data.sweep_radius * 0.9,
-				zone_damage, warn * 0.8, self)
+				zone_damage, warn * 0.8, self, danger)
 			_hitbox.activate()
 			_hit_active = true
 		_:

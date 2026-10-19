@@ -15,10 +15,22 @@ const DEFAULT_DATA := {
 	"weapons_owned": ["sabre"],
 	"weapon_levels": {"sabre": 1},
 	"equipped_weapon": "sabre",
+	## ANNEXE §3 : affixes tirés à l'obtention, ascensions et maîtrise.
+	"weapon_affixes": {},
+	"weapon_ascensions": {},
+	"weapon_mastery": {},
+	"weapon_hits": {},
 	"armor": 0,
 	"costumes_owned": ["default"],
 	"equipped_costume": "default",
 	"skills": {},
+	## ANNEXE §4.1-4.4 : niveau, XP cumulée, attributs et talents.
+	"level": 1,
+	"xp": 0,
+	"attribute_points": 0,
+	"skill_points": 0,
+	"attributes": {},
+	"skill_ranks": {},
 	"upgrades": {},                    # armurerie § 14.4 : { "vitalite": 2, ... }
 	"achievements": [],                # noms des succès débloqués (PHASE 8)
 	"stats": {                       # compteurs des succès et des objectifs du jour
@@ -174,6 +186,232 @@ func upgrade_bonus(id: String) -> float:
 ## Multiplicateur de dégâts de la joueuse (« Force »).
 func damage_multiplier() -> float:
 	return 1.0 + upgrade_bonus("force")
+
+
+## ----------------------------------------------------------------#
+##           PROGRESSION (ANNEXE §4, PHASE 6C)                     #
+## ----------------------------------------------------------------#
+
+func player_level() -> int:
+	return clampi(int(data.get("level", 1)), 1, Progression.MAX_LEVEL)
+
+
+func player_xp() -> int:
+	return maxi(0, int(data.get("xp", 0)))
+
+
+func attribute_points_left() -> int:
+	return maxi(0, int(data.get("attribute_points", 0)))
+
+
+func skill_points_left() -> int:
+	return maxi(0, int(data.get("skill_points", 0)))
+
+
+func attribute_value(attribute: String) -> int:
+	if attribute not in Progression.ATTRIBUTES:
+		return 0
+	return maxi(0, int(data.get("attributes", {}).get(attribute, 0)))
+
+
+func skill_rank(id: String) -> int:
+	return clampi(int(data.get("skill_ranks", {}).get(id, 0)), 0, SkillTree.max_rank(id))
+
+
+## Ajoute de l'XP et attribue les points des niveaux franchis (§4.1).
+## Renvoie le nombre de niveaux gagnés. Les points ne sont jamais perdus.
+func add_xp(amount: int) -> int:
+	if amount <= 0 or player_level() >= Progression.MAX_LEVEL:
+		return 0
+	var before := player_level()
+	data["xp"] = player_xp() + amount
+	var reached := Progression.level_for_xp(player_xp())
+	data["level"] = reached
+	var gained := reached - before
+	if gained <= 0:
+		save_game()
+		return 0
+	data["attribute_points"] = attribute_points_left() + Progression.POINTS_PER_LEVEL * gained
+	var skills_before := Progression.skill_points_for(before)
+	var skills_after := Progression.skill_points_for(reached)
+	data["skill_points"] = skill_points_left() + (skills_after - skills_before)
+	save_game()
+	return gained
+
+
+## Place un point d'attribut. `false` si le nom est inconnu ou sans point.
+func spend_attribute(attribute: String) -> bool:
+	if attribute not in Progression.ATTRIBUTES or attribute_points_left() <= 0:
+		return false
+	var attributes: Dictionary = data.get("attributes", {})
+	attributes[attribute] = int(attributes.get(attribute, 0)) + 1
+	data["attributes"] = attributes
+	data["attribute_points"] = attribute_points_left() - 1
+	save_game()
+	return true
+
+
+## Apprend un rang de talent (§4.4). `false` si le coût dépasse les points ou
+## si le rang maximum est atteint.
+func learn_skill(id: String) -> bool:
+	var rank := skill_rank(id)
+	var price := SkillTree.cost(id, rank)
+	if price < 0 or price > skill_points_left():
+		return false
+	var ranks: Dictionary = data.get("skill_ranks", {})
+	ranks[id] = rank + 1
+	data["skill_ranks"] = ranks
+	data["skill_points"] = skill_points_left() - price
+	save_game()
+	return true
+
+
+## Bonus de critique des attributs (au-dessus des 8 % de base).
+func attribute_crit_bonus() -> float:
+	return 0.005 * float(attribute_value("agilite")) \
+		+ 0.004 * float(attribute_value("chance"))
+
+
+func skill_stat(stat: String) -> float:
+	return SkillTree.stat_total(data.get("skill_ranks", {}), stat)
+
+
+func has_skill_unlock(unlock: String) -> bool:
+	return SkillTree.has_unlock(data.get("skill_ranks", {}), unlock)
+
+
+## ----------------------------------------------------------------#
+##              ARMES (ANNEXE §3, PHASE 6B)                        #
+## ----------------------------------------------------------------#
+
+func owns_weapon(id: String) -> bool:
+	return id in data.get("weapons_owned", [])
+
+
+func equipped_weapon() -> String:
+	var id := str(data.get("equipped_weapon", "sabre"))
+	return id if owns_weapon(id) else "sabre"
+
+
+## Niveau d'amélioration (1 à 10). Une arme inconnue répond 0.
+func weapon_level(id: String) -> int:
+	var levels: Dictionary = data.get("weapon_levels", {})
+	return clampi(int(levels.get(id, 1)), 1, WeaponSystem.MAX_LEVEL)
+
+
+func equip_weapon(id: String) -> bool:
+	if not owns_weapon(id):
+		return false
+	data["equipped_weapon"] = id
+	save_game()
+	return true
+
+
+## Ajoute une arme à l'inventaire et tire ses affixes à l'obtention.
+## `false` si l'arme est inconnue ou déjà possédée.
+func own_weapon(id: String, rng: RandomNumberGenerator = null) -> bool:
+	var weapon := WeaponSystem.load_weapon(id)
+	if weapon == null or owns_weapon(id):
+		return false
+	data["weapons_owned"].append(id)
+	data["weapon_levels"][id] = 1
+	data["weapon_mastery"][id] = 0
+	var generator := rng if rng != null else RandomNumberGenerator.new()
+	if rng == null:
+		generator.randomize()
+	_set_affixes(id, WeaponSystem.affixes_for(weapon, generator))
+	save_game()
+	return true
+
+
+func weapon_affixes(id: String) -> Array[String]:
+	var out: Array[String] = []
+	var stored: Dictionary = data.get("weapon_affixes", {})
+	for affix in stored.get(id, []):
+		out.append(str(affix))
+	return out
+
+
+func _set_affixes(id: String, affixes: Array[String]) -> void:
+	var stored: Dictionary = data.get("weapon_affixes", {})
+	stored[id] = affixes
+	data["weapon_affixes"] = stored
+
+
+## Améliore l'arme d'un niveau (coût 60 × niveau^1,5, §3.4).
+## `false` si l'arme n'est pas possédée, déjà au maximum, ou sans cauris.
+func upgrade_weapon(id: String) -> bool:
+	if not owns_weapon(id):
+		return false
+	var level := weapon_level(id)
+	var cost := WeaponSystem.upgrade_cost(level)
+	if cost < 0 or not try_spend(cost):
+		return false
+	data["weapon_levels"][id] = level + 1
+	save_game()
+	return true
+
+
+## Ascension aux niveaux 5 et 10 (matériau rare de boss, §3.4).
+## `false` si l'arme n'est pas à un palier, ou si elle est déjà ascendue.
+func ascend_weapon(id: String) -> bool:
+	if not owns_weapon(id):
+		return false
+	var level := weapon_level(id)
+	if not WeaponSystem.is_ascension_level(level):
+		return false
+	var done: Dictionary = data.get("weapon_ascensions", {})
+	var levels: Array = done.get(id, [])
+	if levels.has(level):
+		return false
+	levels.append(level)
+	done[id] = levels
+	data["weapon_ascensions"] = done
+	save_game()
+	return true
+
+
+func weapon_ascended(id: String, level: int) -> bool:
+	var done: Dictionary = data.get("weapon_ascensions", {})
+	return (done.get(id, []) as Array).has(level)
+
+
+func weapon_mastery(id: String) -> int:
+	var stored: Dictionary = data.get("weapon_mastery", {})
+	return clampi(int(stored.get(id, 0)), 0, WeaponSystem.MAX_MASTERY)
+
+
+## La maîtrise monte en frappant : 100 coups = 1 point, plafond 20 (§3.4).
+## Le total de coups est conservé pour ne rien perdre entre deux appels.
+func add_weapon_hits(id: String, hits: int) -> int:
+	if not owns_weapon(id) or hits <= 0:
+		return weapon_mastery(id)
+	var totals: Dictionary = data.get("weapon_hits", {})
+	var total := int(totals.get(id, 0)) + hits
+	totals[id] = total
+	data["weapon_hits"] = totals
+	var mastery := WeaponSystem.mastery_after_hits(total)
+	var stored: Dictionary = data.get("weapon_mastery", {})
+	stored[id] = mastery
+	data["weapon_mastery"] = stored
+	save_game()
+	return mastery
+
+
+## Bonus de dégâts additif (affixes) de l'arme équipée.
+func weapon_bonus(id: String) -> float:
+	return AffixData.damage_bonus(weapon_affixes(id))
+
+
+## Facteur de dégâts de l'arme équipée (ANNEXE §3/§4.3). Le sabre de départ
+## au niveau 1 vaut 1,00 : le gameplay de la PHASE 2 ne change pas.
+func equipped_damage_mult() -> float:
+	var id := equipped_weapon()
+	var weapon := WeaponSystem.load_weapon(id)
+	if weapon == null:
+		return 1.0
+	return weapon.rarity_mult() * (1.0 + 0.08 * float(weapon_level(id) - 1)) \
+		* (1.0 + weapon_bonus(id))
 
 
 func has_unlocked(level_id: String) -> bool:

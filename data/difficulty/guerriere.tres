@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DifficultyTier" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/DifficultyTier.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "guerriere"
+display_name = "Guerrière"
+description = "Le combat tel qu'il est écrit : un checkpoint par niveau, pas de checkpoint en boss."
+enemy_health_mult = 1.0
+enemy_damage_mult = 1.0
+aggression = 0.5
+max_potions = 5
+checkpoints_in_boss = false
+one_life_per_chapter = false
+elite_chance = 0.1
+max_elite_affixes = 1
+boss_phase_count = 3
+frame_color = Color(0.72,0.45,0.22, 1)

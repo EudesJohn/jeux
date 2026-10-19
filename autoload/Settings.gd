@@ -20,6 +20,13 @@ var scale_3d: float = 0.8            ## 0,6 à 1,0 (§ 4) ; appliqué en PHASE 1
 ## § 16 : la difficulté se choisit dans les Réglages et s'applique au niveau
 ## suivant (Facile ×0,7 vie et dégâts, Difficile ×1,3 — § 9 du DOSSIER).
 var difficulty: String = "normal"
+## ANNEXE §7 : palier de difficulté persistant ("" = ancienne difficulté).
+var tier: String = ""
+## Dernier choix explicite de l'ancienne difficulté : il est restauré quand on
+## repasse le palier à « Aucun (historique) ».
+var legacy_difficulty: String = "normal"
+## ANNEXE §2.3 : densité de foule (0,25 / 0,5 / 1,0) selon la qualité.
+var crowd_density_override: float = 0.0
 
 
 func _ready() -> void:
@@ -42,7 +49,12 @@ func _load() -> void:
 	quality = str(s.get("quality", "medium"))
 	scale_3d = float(s.get("scale_3d", 0.8))
 	difficulty = str(s.get("difficulty", "normal"))
+	legacy_difficulty = str(s.get("legacy_difficulty", difficulty))
+	tier = str(s.get("tier", ""))
+	crowd_density_override = float(s.get("crowd_density_override", 0.0))
 	GameState.difficulty = difficulty
+	if tier != "" and not GameState.use_tier(tier):
+		tier = ""
 	apply_audio_volumes()
 
 
@@ -59,6 +71,9 @@ func save() -> void:
 		"quality": quality,
 		"scale_3d": scale_3d,
 		"difficulty": difficulty,
+		"legacy_difficulty": legacy_difficulty,
+		"tier": tier,
+		"crowd_density_override": crowd_density_override,
 	}
 	SaveManager.save_game()
 
@@ -108,10 +123,45 @@ func apply_audio_volumes() -> void:
 		AudioServer.get_bus_index("Voice"), linear_to_db(maxf(voice_volume, 0.0001)))
 
 
+## ANNEXE §7.1 : choisir un palier remplace l'ancienne difficulté à 3 valeurs.
+func set_tier(value: String) -> bool:
+	if value != "" and not GameState.use_tier(value):
+		return false
+	if value == "":
+		# Retour à l'ancienne difficulté : on restaure le dernier choix
+		# explicite, pas un « Normal » imposé.
+		GameState.tier = null
+		difficulty = legacy_difficulty
+		GameState.difficulty = difficulty
+	tier = value
+	if value != "":
+		difficulty = GameState.difficulty
+	save()
+	return true
+
+
+## ANNEXE §2.3 : densité de la foule en MultiMesh. Faible 0,25, Moyenne 0,5,
+## Haute 1,0 (60 / 150 / 300 spectateurs).
+func crowd_density() -> float:
+	if crowd_density_override > 0.0:
+		return clampf(crowd_density_override, 0.0, 1.0)
+	match quality:
+		"low":
+			return 0.25
+		"high":
+			return 1.0
+		_:
+			return 0.5
+
+
 func set_difficulty(value: String) -> void:
 	if value not in ["easy", "normal", "hard"]:
 		value = "normal"
+	# L'ancien réglage reprend la main : on quitte le palier de l'ANNEXE §7.
+	tier = ""
+	GameState.clear_tier()
 	difficulty = value
+	legacy_difficulty = value
 	GameState.difficulty = value
 	save()
 

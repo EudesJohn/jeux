@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WeaponData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "fusil_pierre"
+display_name = "Fusil à pierre"
+display_key = "WEAPON_FLINTLOCK"
+kind = 4
+rarity = 1
+base_damage = 22.0
+attack_speed = 0.45
+reach = 10.0
+is_ranged = true
+rune_slots = 0
+possible_affixes = Array[String]([])
+price = 0

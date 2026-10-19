@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WeaponData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "gubasa_ancetres"
+display_name = "Gubasa des ancêtres"
+display_key = "WEAPON_ANCESTOR_SABRE"
+kind = 0
+rarity = 4
+base_damage = 30.0
+attack_speed = 1.15
+reach = 1.9
+is_ranged = false
+rune_slots = 2
+possible_affixes = Array[String]([])
+price = 0

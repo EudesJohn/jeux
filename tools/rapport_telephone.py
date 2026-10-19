@@ -79,6 +79,17 @@ def temperature(dossier: Path) -> str:
     return f"{int(trouve.group(1)) / 10:.1f} °C"
 
 
+def incidents(dossier: Path) -> dict[str, int]:
+    """Compte les crashs/ANR et les erreurs de script lus dans logcat.txt."""
+    fichier = dossier / "logcat.txt"
+    if not fichier.exists():
+        return {"crashs": 0, "erreurs_script": 0, "present": 0}
+    texte = fichier.read_text(encoding="utf-8", errors="replace")
+    crashs = len(re.findall(r"FATAL EXCEPTION|ANR in |Force finishing", texte))
+    erreurs = len(re.findall(r"USER SCRIPT ERROR", texte))
+    return {"crashs": crashs, "erreurs_script": erreurs, "present": 1}
+
+
 def verdict(mesures: list[dict]) -> tuple[str, str]:
     if not mesures:
         return "INCONNU", "aucune mesure : le test automatique n'a pas tourné"
@@ -220,13 +231,16 @@ def main() -> int:
 
     complement = janky(dossier)
     temp = temperature(dossier)
-    if complement or temp:
-        lignes += ["### Relevés système", ""]
-        if complement:
-            lignes.append(f"- gfxinfo : {complement}")
-        if temp:
-            lignes.append(f"- Température batterie en fin de test : {temp}")
-        lignes.append("")
+    faits = incidents(dossier)
+    lignes += ["### Relevés système", ""]
+    if complement:
+        lignes.append(f"- gfxinfo : {complement}")
+    if temp:
+        lignes.append(f"- Température batterie en fin de test : {temp}")
+    if faits["present"]:
+        lignes.append(f"- Crashs et ANR : {faits['crashs']}")
+        lignes.append(f"- Erreurs de script Godot : {faits['erreurs_script']}")
+    lignes.append("")
 
     erreurs = []
     fichier_erreurs = dossier / "adb_erreurs.txt"

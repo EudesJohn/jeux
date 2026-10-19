@@ -155,14 +155,12 @@ de téléphone ; celles-ci conviennent pour la fiche.
 Google Play exige une **URL publique**. Le fichier
 `docs/POLITIQUE_CONFIDENTIALITE.md` est publié tel quel :
 
-- GitHub Pages du dépôt <https://github.com/EudesJohn/jeux> :
-  activer *Settings → Pages* sur la branche `main`, dossier `/docs`.
-  `docs/index.md` sert de page d'accueil et pointe vers la politique ;
-  l'URL à coller dans la Play Console est
-  `https://eudesjohn.github.io/jeux/POLITIQUE_CONFIDENTIALITE.html` ;
-- GitHub Pages n'est gratuit que pour un dépôt **public** ; si le dépôt reste
-  privé, héberger le fichier sur n'importe quelle page statique et coller
-  cette URL-là.
+- **En ligne depuis le 19 octobre 2026** sur GitHub Pages (dépôt public,
+  branche `main`, dossier `/docs`, vérifié en HTTP 200) :
+  <https://eudesjohn.github.io/jeux/POLITIQUE_CONFIDENTIALITE.html> ;
+  `docs/index.md` sert de page d'accueil ;
+- toute modification de la politique publiée sur `main` met la page à jour en
+  une minute environ.
 
 L'URL exacte obtenue doit être recopiée dans la Play Console **et** dans
 `RAPPORT_FINAL.md`.

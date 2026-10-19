@@ -137,10 +137,11 @@ d'ennemis pré-instanciés le supprimerait (à faire, non fait ici).
 Actions humaines restantes :
 1. Fournir les modèles `.glb` à `assets/models/` (l'outillage Blender est prêt).
 2. Nommer les 57 pièces de la planche (`assets/ui/source/planche_assets.noms.txt`).
-3. Activer GitHub Pages (branche `main`, dossier `/docs`) et coller l'URL dans
-   Play Console — la page et `docs/index.md` sont prêts.
+3. Coller dans Play Console l'URL de la politique, déjà en ligne :
+   <https://eudesjohn.github.io/jeux/POLITIQUE_CONFIDENTIALITE.html>.
 4. Envoyer `export/guerriere-abomey-0.8.0.aab` en piste de test interne.
 5. Faire le test coop à deux téléphones (tout le reste est automatisé).
 
 Déjà fait le 19 octobre : clé de release + sauvegarde, preset `Android AAB`,
-AAB signé et vérifié, 4 captures du store (`export/shots/play/`).
+AAB signé et vérifié, 4 captures du store (`export/shots/play/`), page de
+confidentialité publiée sur GitHub Pages.

@@ -98,10 +98,10 @@ sont générées (`export/shots/play/`).
    `tools/build_aab.sh` ; AAB signé produit et vérifié au `keytool`.
    Voir `docs/SIGNATURE_RELEASE.md`.
 6. **Politique de confidentialité** : le texte est rédigé
-   (`docs/POLITIQUE_CONFIDENTIALITE.md`, FR + EN), `docs/index.md` prépare
-   GitHub Pages ; il reste à activer *Settings → Pages* (branche `main`,
-   dossier `/docs`) et à coller l'URL `https://eudesjohn.github.io/jeux/
-   POLITIQUE_CONFIDENTIALITE.html` dans la Play Console. Les 4 captures sont
+   (`docs/POLITIQUE_CONFIDENTIALITE.md`, FR + EN) et **publiée** sur GitHub
+   Pages (branche `main`, dossier `/docs`, vérifiée en HTTP 200) :
+   `https://eudesjohn.github.io/jeux/POLITIQUE_CONFIDENTIALITE.html`.
+   Il reste à coller cette URL dans la Play Console ; les 4 captures sont
    prêtes. Le jeu étant 100 % hors ligne, aucune donnée ne doit être déclarée
    dans le formulaire Play (voir le § 4 de la politique).
 7. **Aucun test sur téléphone ici** : tout est validé en `--headless` (les

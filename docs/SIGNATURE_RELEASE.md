@@ -43,9 +43,14 @@ Prérequis, une seule fois :
   `C:/Users/Eudes Johnson/Downloads/jdk-17.0.20.1+1` ; il est déclaré dans
   *Éditeur → Paramètres → Export → Android → Java SDK path*, **et** le script
   `tools/build_aab.sh` le cherche pour `keytool` ;
-- Android SDK configuré dans Godot ;
+- Android SDK configuré dans Godot, avec **build-tools 34.0.0** (ou une
+  révision installée reportée dans `versions.buildTools` de
+  `android/build/config.gradle` — le PC de développement utilise `36.0.0`) ;
 - modèle de build Android installé : `godot --headless --path . --install-android-build-template`
-  (crée `android/`, ignoré par git) ;
+  (crée `android/`, ignoré par git). Si la commande reste bloquée, extraire
+  `android_source.zip` des modèles d'export dans `android/build/`, créer
+  `android/.build_version` contenant `4.3.stable` et un `.gdignore` dans
+  `android/build/` ;
 - Gradle télécharge ses dépendances au premier export (connexion nécessaire).
 
 ## 3. Ce qu'il faut faire dans la Play Console

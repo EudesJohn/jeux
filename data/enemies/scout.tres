@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/EnemyData.gd" id="1_plq5j"]
+
+[resource]
+script = ExtResource("1_plq5j")
+id = "scout"
+display_name = "Éclaireur"
+health = 20.0
+damage = 6.0
+speed = 4.0
+sight_range = 9.0
+attack_range = 1.4
+telegraph_time = 0.35
+attack_duration = 0.45
+recover_time = 0.5
+drops_cauris = 2
+role = "scout"
+retreat_after_attack = 2.5
+keep_distance = 0.0
+fire_period = 0.0
+ranged = false
+armor = false
+vulnerable_time = 0.9
+buff_allies = false
+buff_mult = 1.2
+buff_radius = 6.0
+summon_period = 0.0
+summon_type = "soldier"
+alert_reinforcements = 0
+tint = Color(0.72, 0.72, 0.64, 1)
+model_scale = 0.92

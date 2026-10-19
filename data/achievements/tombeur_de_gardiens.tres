@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AchievementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/AchievementData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "tombeur_de_gardiens"
+title = "Tombeur de gardiens"
+description = "Vaincre un gardien de chapitre."
+stat = "bosses"
+target = 1
+hidden = false

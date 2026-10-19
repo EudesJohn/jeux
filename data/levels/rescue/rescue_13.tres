@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_rau8e"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_rq0am"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_cw2q3"]
+
+[sub_resource type="Resource" id="Resource_lw3kl"]
+script = ExtResource("2_rq0am")
+type = "brute"
+count = 1
+
+[sub_resource type="Resource" id="Resource_two0h"]
+script = ExtResource("2_rq0am")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_urid1"]
+script = ExtResource("1_rau8e")
+enemies = Array[ExtResource("2_rq0am")]([SubResource("Resource_lw3kl"), SubResource("Resource_two0h")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_sycum"]
+script = ExtResource("2_rq0am")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_ldt4l"]
+script = ExtResource("2_rq0am")
+type = "archer"
+count = 1
+
+[sub_resource type="Resource" id="Resource_bjelo"]
+script = ExtResource("1_rau8e")
+enemies = Array[ExtResource("2_rq0am")]([SubResource("Resource_sycum"), SubResource("Resource_ldt4l")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_ex177"]
+script = ExtResource("2_rq0am")
+type = "brute"
+count = 1
+
+[sub_resource type="Resource" id="Resource_4h143"]
+script = ExtResource("2_rq0am")
+type = "soldier"
+count = 2
+
+[sub_resource type="Resource" id="Resource_nm38w"]
+script = ExtResource("2_rq0am")
+type = "scout"
+count = 1
+
+[sub_resource type="Resource" id="Resource_cbomx"]
+script = ExtResource("1_rau8e")
+enemies = Array[ExtResource("2_rq0am")]([SubResource("Resource_ex177"), SubResource("Resource_4h143"), SubResource("Resource_nm38w")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_cw2q3")
+id = "rescue_13"
+chapter = 3
+number = 13
+display_name = "Nuit au fort"
+layout = "lane"
+length_m = 120.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "rescue"
+time_limit = 100
+prisoners = 4
+escorts = 0
+ally_life = 40.0
+enemy_waves = Array[ExtResource("1_rau8e")]([SubResource("Resource_urid1"), SubResource("Resource_bjelo"), SubResource("Resource_cbomx")])
+hazards = Array[String](["pit", "fire", "spikes"])
+hazards_per_kind = 2
+cauri_pickups = 12
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 92
+star_time_silver = 50
+star_time_gold = 33

@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_o0w8h"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_hox1u"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_n3tps"]
+
+[sub_resource type="Resource" id="Resource_g8n8x"]
+script = ExtResource("2_hox1u")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_mw80k"]
+script = ExtResource("2_hox1u")
+type = "guard"
+count = 1
+
+[sub_resource type="Resource" id="Resource_rw37r"]
+script = ExtResource("1_o0w8h")
+enemies = Array[ExtResource("2_hox1u")]([SubResource("Resource_g8n8x"), SubResource("Resource_mw80k")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_8obxb"]
+script = ExtResource("2_hox1u")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_5r36e"]
+script = ExtResource("2_hox1u")
+type = "soldier"
+count = 2
+
+[sub_resource type="Resource" id="Resource_kauja"]
+script = ExtResource("1_o0w8h")
+enemies = Array[ExtResource("2_hox1u")]([SubResource("Resource_8obxb"), SubResource("Resource_5r36e")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_l8nll"]
+script = ExtResource("2_hox1u")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_ledwn"]
+script = ExtResource("2_hox1u")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_67k30"]
+script = ExtResource("1_o0w8h")
+enemies = Array[ExtResource("2_hox1u")]([SubResource("Resource_l8nll"), SubResource("Resource_ledwn")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_n3tps")
+id = "rescue_08"
+chapter = 2
+number = 8
+display_name = "Camp de toile"
+layout = "lane"
+length_m = 110.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "rescue"
+time_limit = 110
+prisoners = 3
+escorts = 0
+ally_life = 40.0
+enemy_waves = Array[ExtResource("1_o0w8h")]([SubResource("Resource_rw37r"), SubResource("Resource_kauja"), SubResource("Resource_67k30")])
+hazards = Array[String](["pit", "fire"])
+hazards_per_kind = 2
+cauri_pickups = 10
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 72
+star_time_silver = 55
+star_time_gold = 36

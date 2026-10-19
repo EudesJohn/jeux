@@ -1,0 +1,30 @@
+# Cache de l'éditeur Godot (régénéré à l'ouverture)
+.godot/
+
+# Exports et builds : reconstruits par Godot, trop lourds pour git
+export/*.apk
+export/*.aab
+export/*.pck
+export/*.zip
+export/*.idsig
+*.apk
+*.aab
+*.pck
+
+# Clés de signature : ne doivent JAMAIS être commitées (DESIGN.md § 17.2)
+*.keystore
+*.keystore.jks
+export/android/*.keystore
+export/android/keystore*
+
+# Sources lourdes des planches d'assets (les PNG livrés suffisent)
+*.blend
+*.blend1
+*.psd
+*.xcf
+*.kra
+
+# Fichiers temporaires
+*.tmp
+Thumbs.db
+.DS_Store

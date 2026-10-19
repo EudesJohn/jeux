@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/EnemyData.gd" id="1_i3wjc"]
+
+[resource]
+script = ExtResource("1_i3wjc")
+id = "chief"
+display_name = "Chef"
+health = 70.0
+damage = 14.0
+speed = 2.2
+sight_range = 9.0
+attack_range = 1.6
+telegraph_time = 0.35
+attack_duration = 0.5
+recover_time = 0.7
+drops_cauris = 12
+role = "chief"
+retreat_after_attack = 0.0
+keep_distance = 0.0
+fire_period = 0.0
+ranged = false
+armor = false
+vulnerable_time = 0.9
+buff_allies = true
+buff_mult = 1.2
+buff_radius = 6.0
+summon_period = 12.0
+summon_type = "soldier"
+alert_reinforcements = 0
+tint = Color(0.45, 0.14, 0.12, 1)
+model_scale = 1.1

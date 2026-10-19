@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/EnemyData.gd" id="1_4coqv"]
+
+[resource]
+script = ExtResource("1_4coqv")
+id = "brute"
+display_name = "Brute blindée"
+health = 90.0
+damage = 16.0
+speed = 1.2
+sight_range = 9.0
+attack_range = 1.7
+telegraph_time = 0.6
+attack_duration = 0.7
+recover_time = 1.2
+drops_cauris = 8
+role = "brute"
+retreat_after_attack = 0.0
+keep_distance = 0.0
+fire_period = 0.0
+ranged = false
+armor = true
+vulnerable_time = 0.9
+buff_allies = false
+buff_mult = 1.2
+buff_radius = 6.0
+summon_period = 0.0
+summon_type = "soldier"
+alert_reinforcements = 0
+tint = Color(0.4, 0.32, 0.26, 1)
+model_scale = 1.3

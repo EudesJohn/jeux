@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_rebg4"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_l8xej"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_343ac"]
+
+[sub_resource type="Resource" id="Resource_a8yh4"]
+script = ExtResource("2_l8xej")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_ap8dd"]
+script = ExtResource("1_rebg4")
+enemies = Array[ExtResource("2_l8xej")]([SubResource("Resource_a8yh4")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_urcw2"]
+script = ExtResource("2_l8xej")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_vj5dh"]
+script = ExtResource("2_l8xej")
+type = "scout"
+count = 3
+
+[sub_resource type="Resource" id="Resource_lcwpi"]
+script = ExtResource("1_rebg4")
+enemies = Array[ExtResource("2_l8xej")]([SubResource("Resource_urcw2"), SubResource("Resource_vj5dh")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_1lsn0"]
+script = ExtResource("2_l8xej")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_7u4to"]
+script = ExtResource("2_l8xej")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_elos6"]
+script = ExtResource("1_rebg4")
+enemies = Array[ExtResource("2_l8xej")]([SubResource("Resource_1lsn0"), SubResource("Resource_7u4to")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_ov5hq"]
+script = ExtResource("2_l8xej")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_t86vj"]
+script = ExtResource("2_l8xej")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_7mfgj"]
+script = ExtResource("1_rebg4")
+enemies = Array[ExtResource("2_l8xej")]([SubResource("Resource_ov5hq"), SubResource("Resource_t86vj")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_343ac")
+id = "ch3_l5"
+chapter = 3
+number = 5
+display_name = "L'autel de la forêt"
+layout = "arena"
+length_m = 124.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "boss"
+time_limit = 150
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = "colossus"
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_rebg4")]([SubResource("Resource_ap8dd"), SubResource("Resource_lcwpi"), SubResource("Resource_elos6"), SubResource("Resource_7mfgj")])
+hazards = Array[String]([])
+hazards_per_kind = 2
+cauri_pickups = 12
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.0
+night = false
+modifier = ""
+music_layer_set = "village"
+reward_cauris = 69
+star_time_silver = 82
+star_time_gold = 52

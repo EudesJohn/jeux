@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_akopl"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_nqimj"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_8yivk"]
+
+[sub_resource type="Resource" id="Resource_1qcll"]
+script = ExtResource("2_nqimj")
+type = "brute"
+count = 1
+
+[sub_resource type="Resource" id="Resource_i7okn"]
+script = ExtResource("2_nqimj")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_wwjfx"]
+script = ExtResource("1_akopl")
+enemies = Array[ExtResource("2_nqimj")]([SubResource("Resource_1qcll"), SubResource("Resource_i7okn")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_j8yys"]
+script = ExtResource("2_nqimj")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_xk440"]
+script = ExtResource("2_nqimj")
+type = "archer"
+count = 1
+
+[sub_resource type="Resource" id="Resource_dgf3y"]
+script = ExtResource("1_akopl")
+enemies = Array[ExtResource("2_nqimj")]([SubResource("Resource_j8yys"), SubResource("Resource_xk440")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_hiej2"]
+script = ExtResource("2_nqimj")
+type = "brute"
+count = 1
+
+[sub_resource type="Resource" id="Resource_djfb2"]
+script = ExtResource("2_nqimj")
+type = "soldier"
+count = 2
+
+[sub_resource type="Resource" id="Resource_rx5h3"]
+script = ExtResource("2_nqimj")
+type = "scout"
+count = 1
+
+[sub_resource type="Resource" id="Resource_u5vo0"]
+script = ExtResource("1_akopl")
+enemies = Array[ExtResource("2_nqimj")]([SubResource("Resource_hiej2"), SubResource("Resource_djfb2"), SubResource("Resource_rx5h3")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_8yivk")
+id = "rescue_16"
+chapter = 4
+number = 16
+display_name = "Nuit sur le rempart"
+layout = "lane"
+length_m = 135.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "rescue"
+time_limit = 100
+prisoners = 4
+escorts = 0
+ally_life = 40.0
+enemy_waves = Array[ExtResource("1_akopl")]([SubResource("Resource_wwjfx"), SubResource("Resource_dgf3y"), SubResource("Resource_u5vo0")])
+hazards = Array[String](["arrows", "fire", "spikes"])
+hazards_per_kind = 2
+cauri_pickups = 14
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 104
+star_time_silver = 50
+star_time_gold = 33

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/EnemyData.gd" id="1_t8q6y"]
+
+[resource]
+script = ExtResource("1_t8q6y")
+id = "guard"
+display_name = "Garde d'alerte"
+health = 35.0
+damage = 8.0
+speed = 2.0
+sight_range = 9.0
+attack_range = 1.5
+telegraph_time = 0.45
+attack_duration = 0.5
+recover_time = 0.8
+drops_cauris = 4
+role = "guard"
+retreat_after_attack = 0.0
+keep_distance = 0.0
+fire_period = 0.0
+ranged = false
+armor = false
+vulnerable_time = 0.9
+buff_allies = false
+buff_mult = 1.2
+buff_radius = 6.0
+summon_period = 0.0
+summon_type = "soldier"
+alert_reinforcements = 2
+tint = Color(0.55, 0.5, 0.35, 1)
+model_scale = 1.0

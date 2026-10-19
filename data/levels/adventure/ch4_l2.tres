@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_8e8l6"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_h25jr"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_2vyky"]
+
+[sub_resource type="Resource" id="Resource_xxbn8"]
+script = ExtResource("2_h25jr")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_d875l"]
+script = ExtResource("1_8e8l6")
+enemies = Array[ExtResource("2_h25jr")]([SubResource("Resource_xxbn8")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_0kxdm"]
+script = ExtResource("2_h25jr")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_6k7l4"]
+script = ExtResource("2_h25jr")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_8rvil"]
+script = ExtResource("1_8e8l6")
+enemies = Array[ExtResource("2_h25jr")]([SubResource("Resource_0kxdm"), SubResource("Resource_6k7l4")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_lr6yj"]
+script = ExtResource("2_h25jr")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_ermov"]
+script = ExtResource("2_h25jr")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_om7sk"]
+script = ExtResource("1_8e8l6")
+enemies = Array[ExtResource("2_h25jr")]([SubResource("Resource_lr6yj"), SubResource("Resource_ermov")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_usaws"]
+script = ExtResource("2_h25jr")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_m3sa7"]
+script = ExtResource("2_h25jr")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_1afjc"]
+script = ExtResource("1_8e8l6")
+enemies = Array[ExtResource("2_h25jr")]([SubResource("Resource_usaws"), SubResource("Resource_m3sa7")])
+delay = 1.15
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_2vyky")
+id = "ch4_l2"
+chapter = 4
+number = 2
+display_name = "La poterne"
+layout = "lane"
+length_m = 114.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "exit"
+time_limit = 110
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_8e8l6")]([SubResource("Resource_d875l"), SubResource("Resource_8rvil"), SubResource("Resource_om7sk"), SubResource("Resource_1afjc")])
+hazards = Array[String](["pit", "arrows", "fire", "spikes"])
+hazards_per_kind = 3
+cauri_pickups = 10
+cauri_per_pickup = 3
+potion_pickups = 2
+checkpoint_at = 0.5
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 65
+star_time_silver = 60
+star_time_gold = 38

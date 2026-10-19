@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/EnemyData.gd" id="1_7hxgf"]
+
+[resource]
+script = ExtResource("1_7hxgf")
+id = "archer"
+display_name = "Archer"
+health = 18.0
+damage = 10.0
+speed = 1.4
+sight_range = 9.0
+attack_range = 7.0
+telegraph_time = 0.5
+attack_duration = 0.6
+recover_time = 0.6
+drops_cauris = 3
+role = "archer"
+retreat_after_attack = 0.0
+keep_distance = 7.0
+fire_period = 2.2
+ranged = true
+armor = false
+vulnerable_time = 0.9
+buff_allies = false
+buff_mult = 1.2
+buff_radius = 6.0
+summon_period = 0.0
+summon_type = "soldier"
+alert_reinforcements = 0
+tint = Color(0.35, 0.45, 0.3, 1)
+model_scale = 1.02

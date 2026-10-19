@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_xs4hr"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_r7cim"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_jqqao"]
+
+[sub_resource type="Resource" id="Resource_s2ke2"]
+script = ExtResource("2_r7cim")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_uoj4j"]
+script = ExtResource("1_xs4hr")
+enemies = Array[ExtResource("2_r7cim")]([SubResource("Resource_s2ke2")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_dlpwn"]
+script = ExtResource("2_r7cim")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_6spcw"]
+script = ExtResource("2_r7cim")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_ty7j5"]
+script = ExtResource("1_xs4hr")
+enemies = Array[ExtResource("2_r7cim")]([SubResource("Resource_dlpwn"), SubResource("Resource_6spcw")])
+delay = 1.2
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_jqqao")
+id = "ch2_l2"
+chapter = 2
+number = 2
+display_name = "Le gué de la rivière"
+layout = "lane"
+length_m = 98.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "exit"
+time_limit = 118
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_xs4hr")]([SubResource("Resource_uoj4j"), SubResource("Resource_ty7j5")])
+hazards = Array[String](["pit", "arrows"])
+hazards_per_kind = 2
+cauri_pickups = 8
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "village"
+reward_cauris = 49
+star_time_silver = 64
+star_time_gold = 41

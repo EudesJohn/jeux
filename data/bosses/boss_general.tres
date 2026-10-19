@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="BossData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/BossData.gd" id="1_lqv8b"]
+
+[resource]
+script = ExtResource("1_lqv8b")
+id = "rival_general"
+display_name = "Général rival"
+chapter = 5
+health = 1100.0
+damage = 22.0
+speed = 3.0
+attack_range = 2.8
+telegraph_time = 0.6
+recover_time = 0.7
+contact_damage = 8.0
+drops_cauris = 150
+attacks = Array[String](["sweep", "charge"])
+phase_2_attacks = Array[String](["arrows", "slam"])
+phase_3_attacks = Array[String](["teleport", "orbs"])
+charge_distance = 14.0
+charge_width = 2.2
+sweep_radius = 3.6
+slam_radius = 5.0
+arrow_count = 4
+arrow_radius = 1.9
+combo_hits = 5
+summon_phase = 2
+summon_count = 2
+summon_type = "soldier"
+armor_guards = 0
+darken_arena = false
+tint = Color(0.75, 0.12, 0.1, 1)
+model_scale = 2.0

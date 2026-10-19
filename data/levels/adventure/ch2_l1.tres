@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_uix84"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_q372i"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_6s6ax"]
+
+[sub_resource type="Resource" id="Resource_2nosb"]
+script = ExtResource("2_q372i")
+type = "soldier"
+count = 4
+
+[sub_resource type="Resource" id="Resource_w6ok6"]
+script = ExtResource("1_uix84")
+enemies = Array[ExtResource("2_q372i")]([SubResource("Resource_2nosb")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_c4dvf"]
+script = ExtResource("2_q372i")
+type = "soldier"
+count = 4
+
+[sub_resource type="Resource" id="Resource_6ml8x"]
+script = ExtResource("2_q372i")
+type = "scout"
+count = 1
+
+[sub_resource type="Resource" id="Resource_am4gx"]
+script = ExtResource("1_uix84")
+enemies = Array[ExtResource("2_q372i")]([SubResource("Resource_c4dvf"), SubResource("Resource_6ml8x")])
+delay = 1.2
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_6s6ax")
+id = "ch2_l1"
+chapter = 2
+number = 1
+display_name = "Les marais salants"
+layout = "lane"
+length_m = 92.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "clear"
+time_limit = 120
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_uix84")]([SubResource("Resource_w6ok6"), SubResource("Resource_am4gx")])
+hazards = Array[String](["pit", "arrows"])
+hazards_per_kind = 2
+cauri_pickups = 7
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "village"
+reward_cauris = 45
+star_time_silver = 66
+star_time_gold = 42

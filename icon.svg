@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <!-- Icône provisoire PHASE 0 : médaillon rouge Dahomey avec sabre or (remplacer à PHASE 9) -->
+  <rect width="192" height="192" rx="24" fill="#1F2A5C"/>
+  <circle cx="96" cy="96" r="72" fill="#B3261E"/>
+  <circle cx="96" cy="96" r="72" fill="none" stroke="#E3A92B" stroke-width="8"/>
+  <path d="M96 34 L104 120 L96 140 L88 120 Z" fill="#E3A92B"/>
+  <path d="M96 34 L76 118 L96 132" fill="none" stroke="#F5E9D0" stroke-width="6" stroke-linecap="round"/>
+</svg>

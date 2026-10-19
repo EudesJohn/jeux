@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_d52p0"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_v47yd"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_37r3b"]
+
+[sub_resource type="Resource" id="Resource_0tngm"]
+script = ExtResource("2_v47yd")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_c07ac"]
+script = ExtResource("2_v47yd")
+type = "guard"
+count = 1
+
+[sub_resource type="Resource" id="Resource_hbv1y"]
+script = ExtResource("1_d52p0")
+enemies = Array[ExtResource("2_v47yd")]([SubResource("Resource_0tngm"), SubResource("Resource_c07ac")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_bm2bd"]
+script = ExtResource("2_v47yd")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_1fed5"]
+script = ExtResource("2_v47yd")
+type = "soldier"
+count = 2
+
+[sub_resource type="Resource" id="Resource_dx5rh"]
+script = ExtResource("1_d52p0")
+enemies = Array[ExtResource("2_v47yd")]([SubResource("Resource_bm2bd"), SubResource("Resource_1fed5")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_wpq7e"]
+script = ExtResource("2_v47yd")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_vxjnh"]
+script = ExtResource("2_v47yd")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_srig1"]
+script = ExtResource("1_d52p0")
+enemies = Array[ExtResource("2_v47yd")]([SubResource("Resource_wpq7e"), SubResource("Resource_vxjnh")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_37r3b")
+id = "rescue_09"
+chapter = 2
+number = 9
+display_name = "Place des tambours"
+layout = "lane"
+length_m = 120.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "rescue"
+time_limit = 110
+prisoners = 3
+escorts = 0
+ally_life = 40.0
+enemy_waves = Array[ExtResource("1_d52p0")]([SubResource("Resource_hbv1y"), SubResource("Resource_dx5rh"), SubResource("Resource_srig1")])
+hazards = Array[String](["arrows", "fire"])
+hazards_per_kind = 2
+cauri_pickups = 10
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 76
+star_time_silver = 55
+star_time_gold = 36

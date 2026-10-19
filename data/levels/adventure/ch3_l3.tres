@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_dtd4c"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_5c2np"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_bsl1x"]
+
+[sub_resource type="Resource" id="Resource_33aok"]
+script = ExtResource("2_5c2np")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_nqpnj"]
+script = ExtResource("1_dtd4c")
+enemies = Array[ExtResource("2_5c2np")]([SubResource("Resource_33aok")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_7y60o"]
+script = ExtResource("2_5c2np")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_ljrfd"]
+script = ExtResource("2_5c2np")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_e4ps4"]
+script = ExtResource("1_dtd4c")
+enemies = Array[ExtResource("2_5c2np")]([SubResource("Resource_7y60o"), SubResource("Resource_ljrfd")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_mwk1y"]
+script = ExtResource("2_5c2np")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_afbs5"]
+script = ExtResource("2_5c2np")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_jolsf"]
+script = ExtResource("1_dtd4c")
+enemies = Array[ExtResource("2_5c2np")]([SubResource("Resource_mwk1y"), SubResource("Resource_afbs5")])
+delay = 1.2
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_bsl1x")
+id = "ch3_l3"
+chapter = 3
+number = 3
+display_name = "Le sanctuaire"
+layout = "lane"
+length_m = 112.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "clear"
+time_limit = 112
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_dtd4c")]([SubResource("Resource_nqpnj"), SubResource("Resource_e4ps4"), SubResource("Resource_jolsf")])
+hazards = Array[String](["pit", "arrows", "fire"])
+hazards_per_kind = 2
+cauri_pickups = 10
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "village"
+reward_cauris = 61
+star_time_silver = 61
+star_time_gold = 39

@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_22ojo"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_86baj"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_7tclv"]
+
+[sub_resource type="Resource" id="Resource_gvb1p"]
+script = ExtResource("2_86baj")
+type = "brute"
+count = 1
+
+[sub_resource type="Resource" id="Resource_y6mrk"]
+script = ExtResource("2_86baj")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_6mqol"]
+script = ExtResource("1_22ojo")
+enemies = Array[ExtResource("2_86baj")]([SubResource("Resource_gvb1p"), SubResource("Resource_y6mrk")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_5axy7"]
+script = ExtResource("2_86baj")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_hfctf"]
+script = ExtResource("2_86baj")
+type = "archer"
+count = 1
+
+[sub_resource type="Resource" id="Resource_725l5"]
+script = ExtResource("1_22ojo")
+enemies = Array[ExtResource("2_86baj")]([SubResource("Resource_5axy7"), SubResource("Resource_hfctf")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_bfksh"]
+script = ExtResource("2_86baj")
+type = "brute"
+count = 1
+
+[sub_resource type="Resource" id="Resource_gh13y"]
+script = ExtResource("2_86baj")
+type = "soldier"
+count = 2
+
+[sub_resource type="Resource" id="Resource_88dru"]
+script = ExtResource("2_86baj")
+type = "scout"
+count = 1
+
+[sub_resource type="Resource" id="Resource_7voum"]
+script = ExtResource("1_22ojo")
+enemies = Array[ExtResource("2_86baj")]([SubResource("Resource_bfksh"), SubResource("Resource_gh13y"), SubResource("Resource_88dru")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_7tclv")
+id = "rescue_15"
+chapter = 3
+number = 15
+display_name = "Nuit au puits"
+layout = "lane"
+length_m = 130.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "rescue"
+time_limit = 100
+prisoners = 4
+escorts = 0
+ally_life = 40.0
+enemy_waves = Array[ExtResource("1_22ojo")]([SubResource("Resource_6mqol"), SubResource("Resource_725l5"), SubResource("Resource_7voum")])
+hazards = Array[String](["pit", "arrows", "spikes"])
+hazards_per_kind = 2
+cauri_pickups = 13
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 100
+star_time_silver = 50
+star_time_gold = 33

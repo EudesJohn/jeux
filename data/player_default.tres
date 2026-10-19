@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/PlayerData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+max_health = 100.0
+max_energy = 100.0
+speed = 4.5
+accel = 30.0
+turn_speed = 14.0
+guard_speed = 1.4
+dodge_duration = 0.35
+dodge_iframes = 0.25
+dodge_speed = 10.3
+dodge_cooldown = 0.6
+perfect_guard_window = 0.18
+hurt_iframes = 0.8
+model_scene = null

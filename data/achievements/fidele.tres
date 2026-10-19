@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AchievementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/AchievementData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "fidele"
+title = "Fidèle au royaume"
+description = "Relever le défi du jour 7 jours de suite."
+stat = "daily_streak"
+target = 7
+hidden = false

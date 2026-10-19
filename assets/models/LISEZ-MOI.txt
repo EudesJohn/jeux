@@ -1,0 +1,42 @@
+MODÈLES 3D (PHASE 9)
+====================
+
+Dépose ici les fichiers .glb du modeleur (Blender), en suivant les noms du
+DESIGN.md § 6.3 — le nom du fichier décide du budget appliqué :
+
+    hero_nawi.glb        héroïne        6 000 tris, 40 appels de dessin
+    ally_*.glb           alliée         6 000 tris, 40 appels
+    enemy_soldier.glb    ennemi         3 500 tris, 30 appels
+    brute_*.glb          brute/chef     5 000 tris, 35 appels
+    boss_captain.glb     boss           9 000 tris, 45 appels
+    weapon_sabre.glb     arme             800 tris,  1 appel
+    prop_cage.glb        décor          2 000 tris,  6 appels
+
+Conventions (§ 6.3) : 1 unité = 1 m, origine aux pieds, T-pose, regard vers
+−Z après export, glTF 2.0 binaire, Draco désactivé.
+
+ANIMATIONS ATTENDUES (personnages)
+----------------------------------
+Le modèle doit exposer exactement ces états (§ 20.5), sinon le test le signale :
+
+    idle  run  attack1  attack2  attack3
+    dodge guard  hurt  death  interact
+
+VÉRIFIER AVANT D'INTÉGRER
+-------------------------
+    godot --headless --path . --script res://tools/check_model_budgets.gd
+
+Le même outil accepte un fichier précis :
+
+    godot --headless --path . --script res://tools/check_model_budgets.gd -- \
+        --file=res://assets/models/hero_nawi.glb
+
+Code de sortie 0 = tout passe, 1 = au moins un modèle dépasse ou ne s'ouvre
+pas. `--no-animations` ignore les états (utile pour une arme ou un décor).
+
+BRANCHER LE MODÈLE
+------------------
+Aucun code à toucher (§ 6.6) : dans `data/player_default.tres` (joueuse) ou
+dans les `.tres` de `data/enemies/` et `data/bosses/`, remplir `model_scene`
+avec la scène importée. `model_scale` agrandit le modèle ET ses collisions.
+Sans `model_scene`, la poupée de test reste utilisée.

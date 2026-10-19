@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/characters/Player3D.gd" id="1"]
+[ext_resource type="Resource" path="res://data/player_default.tres" id="2"]
+[ext_resource type="Script" path="res://scripts/combat/Hitbox3D.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox3D.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/combat/ComboController.gd" id="5"]
+
+[sub_resource type="CapsuleShape3D" id="BodyShape"]
+radius = 0.35
+height = 1.7
+
+[sub_resource type="BoxShape3D" id="HitShape"]
+size = Vector3(1.4, 1.6, 1.6)
+
+[sub_resource type="CapsuleShape3D" id="HurtShape"]
+radius = 0.4
+height = 1.8
+
+[node name="Player3D" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1")
+data = ExtResource("2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("BodyShape")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Hitbox3D" type="Area3D" parent="Visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1.1)
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("3")
+damage = 8.0
+knockback = 1.2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/Hitbox3D"]
+shape = SubResource("HitShape")
+
+[node name="Hurtbox3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox3D"]
+shape = SubResource("HurtShape")
+
+[node name="ComboController" type="Node" parent="."]
+script = ExtResource("5")

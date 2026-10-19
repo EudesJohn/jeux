@@ -1,0 +1,25 @@
+VOIX — EMPLACEMENTS (DESIGN.md § 17 et § 31)
+===========================================
+
+Aucune voix n'est livrée : les dialogues en fon doivent être enregistrés par
+des **locuteurs natifs** (exigence du § 31 « Respect culturel »). Le code, les
+bus, les sous-titres et le dossier sont prêts : il n'y a plus qu'à déposer les
+fichiers ici.
+
+Nom des fichiers
+----------------
+    <langue>_<ligne>.wav        (WAV ou OGG, mono, 22 050 Hz)
+
+Exemples :
+
+    fr_intro.wav        fon_intro.wav
+    fr_low_health.wav   fon_low_health.wav
+    fr_victory.wav      fon_victory.wav
+
+Les lignes prévues par le jeu sont listées dans `AudioManager.VOICE_LINES`
+(autoload/AudioManager.gd). Tant qu'un fichier est absent, le jeu ne joue rien
+mais affiche quand même le sous-titre : on peut donc traduire et enregistrer
+les voix progressivement, sans rien casser.
+
+Les sous-titres, eux, sont déjà traduits : voir `assets/i18n/*.po`, clés
+`VOICE_*`.

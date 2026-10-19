@@ -1,0 +1,112 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_cgtuk"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_aekr4"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_nwpoc"]
+
+[sub_resource type="Resource" id="Resource_076vm"]
+script = ExtResource("2_aekr4")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_p8bco"]
+script = ExtResource("1_cgtuk")
+enemies = Array[ExtResource("2_aekr4")]([SubResource("Resource_076vm")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_4874u"]
+script = ExtResource("2_aekr4")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_i2nl6"]
+script = ExtResource("2_aekr4")
+type = "scout"
+count = 3
+
+[sub_resource type="Resource" id="Resource_n635m"]
+script = ExtResource("1_cgtuk")
+enemies = Array[ExtResource("2_aekr4")]([SubResource("Resource_4874u"), SubResource("Resource_i2nl6")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_tnk7c"]
+script = ExtResource("2_aekr4")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_r1a1k"]
+script = ExtResource("2_aekr4")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_fkufm"]
+script = ExtResource("1_cgtuk")
+enemies = Array[ExtResource("2_aekr4")]([SubResource("Resource_tnk7c"), SubResource("Resource_r1a1k")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_o0a7u"]
+script = ExtResource("2_aekr4")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_ut5tv"]
+script = ExtResource("2_aekr4")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_6xipk"]
+script = ExtResource("1_cgtuk")
+enemies = Array[ExtResource("2_aekr4")]([SubResource("Resource_o0a7u"), SubResource("Resource_ut5tv")])
+delay = 1.15
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_axbvn"]
+script = ExtResource("2_aekr4")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_ekdwh"]
+script = ExtResource("2_aekr4")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_3e08c"]
+script = ExtResource("1_cgtuk")
+enemies = Array[ExtResource("2_aekr4")]([SubResource("Resource_axbvn"), SubResource("Resource_ekdwh")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_nwpoc")
+id = "ch4_l5"
+chapter = 4
+number = 5
+display_name = "La cour de nuit"
+layout = "arena"
+length_m = 132.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "boss"
+time_limit = 150
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = "shadow_sorcerer"
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_cgtuk")]([SubResource("Resource_p8bco"), SubResource("Resource_n635m"), SubResource("Resource_fkufm"), SubResource("Resource_6xipk"), SubResource("Resource_3e08c")])
+hazards = Array[String]([])
+hazards_per_kind = 3
+cauri_pickups = 13
+cauri_per_pickup = 3
+potion_pickups = 2
+checkpoint_at = 0.0
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 77
+star_time_silver = 82
+star_time_gold = 52

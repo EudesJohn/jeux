@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_saiy1"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_73ic7"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_wqos3"]
+
+[sub_resource type="Resource" id="Resource_eau1h"]
+script = ExtResource("2_73ic7")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_fvta1"]
+script = ExtResource("1_saiy1")
+enemies = Array[ExtResource("2_73ic7")]([SubResource("Resource_eau1h")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_p446y"]
+script = ExtResource("2_73ic7")
+type = "soldier"
+count = 2
+
+[sub_resource type="Resource" id="Resource_5240l"]
+script = ExtResource("2_73ic7")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_dkk60"]
+script = ExtResource("1_saiy1")
+enemies = Array[ExtResource("2_73ic7")]([SubResource("Resource_p446y"), SubResource("Resource_5240l")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_h4g6l"]
+script = ExtResource("2_73ic7")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_ey5jy"]
+script = ExtResource("2_73ic7")
+type = "archer"
+count = 1
+
+[sub_resource type="Resource" id="Resource_0gvcg"]
+script = ExtResource("1_saiy1")
+enemies = Array[ExtResource("2_73ic7")]([SubResource("Resource_h4g6l"), SubResource("Resource_ey5jy")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_wqos3")
+id = "lane_02"
+chapter = 1
+number = 3
+display_name = "Marché d'Abomey"
+layout = "lane"
+length_m = 100.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "exit"
+time_limit = 130
+prisoners = 0
+enemy_waves = Array[ExtResource("1_saiy1")]([SubResource("Resource_fvta1"), SubResource("Resource_dkk60"), SubResource("Resource_0gvcg")])
+hazards = Array[String](["pit", "arrows"])
+hazards_per_kind = 2
+cauri_pickups = 8
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 60
+star_time_silver = 100
+star_time_gold = 70

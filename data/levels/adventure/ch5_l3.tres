@@ -1,0 +1,117 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=19 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_yauhw"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_ewkup"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_mqtyo"]
+
+[sub_resource type="Resource" id="Resource_1hxyg"]
+script = ExtResource("2_ewkup")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_rts0l"]
+script = ExtResource("1_yauhw")
+enemies = Array[ExtResource("2_ewkup")]([SubResource("Resource_1hxyg")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_e337p"]
+script = ExtResource("2_ewkup")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_kcn52"]
+script = ExtResource("2_ewkup")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_2hw75"]
+script = ExtResource("1_yauhw")
+enemies = Array[ExtResource("2_ewkup")]([SubResource("Resource_e337p"), SubResource("Resource_kcn52")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_63jbs"]
+script = ExtResource("2_ewkup")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_54rkr"]
+script = ExtResource("2_ewkup")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_e5deb"]
+script = ExtResource("1_yauhw")
+enemies = Array[ExtResource("2_ewkup")]([SubResource("Resource_63jbs"), SubResource("Resource_54rkr")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_yjynw"]
+script = ExtResource("2_ewkup")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_f06ks"]
+script = ExtResource("2_ewkup")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_mq3gb"]
+script = ExtResource("1_yauhw")
+enemies = Array[ExtResource("2_ewkup")]([SubResource("Resource_yjynw"), SubResource("Resource_f06ks")])
+delay = 1.15
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_yq8qs"]
+script = ExtResource("2_ewkup")
+type = "brute"
+count = 1
+
+[sub_resource type="Resource" id="Resource_pqpyx"]
+script = ExtResource("2_ewkup")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_ihulo"]
+script = ExtResource("2_ewkup")
+type = "archer"
+count = 1
+
+[sub_resource type="Resource" id="Resource_704he"]
+script = ExtResource("1_yauhw")
+enemies = Array[ExtResource("2_ewkup")]([SubResource("Resource_yq8qs"), SubResource("Resource_pqpyx"), SubResource("Resource_ihulo")])
+delay = 1.1
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_mqtyo")
+id = "ch5_l3"
+chapter = 5
+number = 3
+display_name = "La salle du trône"
+layout = "lane"
+length_m = 128.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "clear"
+time_limit = 104
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_yauhw")]([SubResource("Resource_rts0l"), SubResource("Resource_2hw75"), SubResource("Resource_e5deb"), SubResource("Resource_mq3gb"), SubResource("Resource_704he")])
+hazards = Array[String](["pit", "arrows", "fire", "spikes", "mud"])
+hazards_per_kind = 3
+cauri_pickups = 12
+cauri_per_pickup = 3
+potion_pickups = 2
+checkpoint_at = 0.5
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 77
+star_time_silver = 57
+star_time_gold = 36

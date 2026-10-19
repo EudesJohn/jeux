@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_s1q00"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_px0xj"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_i4eo6"]
+
+[sub_resource type="Resource" id="Resource_1l8sp"]
+script = ExtResource("2_px0xj")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_kb372"]
+script = ExtResource("1_s1q00")
+enemies = Array[ExtResource("2_px0xj")]([SubResource("Resource_1l8sp")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_ngtkm"]
+script = ExtResource("2_px0xj")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_qr8yw"]
+script = ExtResource("2_px0xj")
+type = "scout"
+count = 3
+
+[sub_resource type="Resource" id="Resource_6etjw"]
+script = ExtResource("1_s1q00")
+enemies = Array[ExtResource("2_px0xj")]([SubResource("Resource_ngtkm"), SubResource("Resource_qr8yw")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_21auu"]
+script = ExtResource("2_px0xj")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_4pnqw"]
+script = ExtResource("2_px0xj")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_wijep"]
+script = ExtResource("1_s1q00")
+enemies = Array[ExtResource("2_px0xj")]([SubResource("Resource_21auu"), SubResource("Resource_4pnqw")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_pg8mk"]
+script = ExtResource("2_px0xj")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_umacv"]
+script = ExtResource("2_px0xj")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_24k1m"]
+script = ExtResource("1_s1q00")
+enemies = Array[ExtResource("2_px0xj")]([SubResource("Resource_pg8mk"), SubResource("Resource_umacv")])
+delay = 1.15
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_i4eo6")
+id = "ch4_l4"
+chapter = 4
+number = 4
+display_name = "Le bastion"
+layout = "lane"
+length_m = 126.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "clear"
+time_limit = 106
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_s1q00")]([SubResource("Resource_kb372"), SubResource("Resource_6etjw"), SubResource("Resource_wijep"), SubResource("Resource_24k1m")])
+hazards = Array[String](["pit", "arrows", "fire", "spikes"])
+hazards_per_kind = 3
+cauri_pickups = 12
+cauri_per_pickup = 3
+potion_pickups = 2
+checkpoint_at = 0.5
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 73
+star_time_silver = 58
+star_time_gold = 37

@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="Balance" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/Balance.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+max_health = 100.0
+max_energy = 100.0
+speed = 4.5
+guard_speed = 1.4
+accel = 30.0
+gravity = 20.0
+turn_speed = 14.0
+base_damage = 10.0
+combo_len = PackedFloat32Array(0.44, 0.47, 0.6)
+combo_mult = PackedFloat32Array(0.8, 1.0, 1.6)
+combo_advance = PackedFloat32Array(0.4, 0.5, 0.8)
+combo_hit_from = PackedFloat32Array(0.12, 0.15, 0.2)
+combo_hit_to = PackedFloat32Array(0.28, 0.31, 0.36)
+combo_window_from = PackedFloat32Array(0.3, 0.33, 0.4)
+combo_knockback = PackedFloat32Array(1.2, 1.6, 4.4)
+combo_hitstop = PackedFloat32Array(0.05, 0.05, 0.09)
+combo_shake = PackedFloat32Array(0.12, 0.16, 0.32)
+combo_window_time = 0.15
+attack_magnet_radius = 2.5
+attack_magnet_cone_deg = 30.0
+dodge_duration = 0.35
+dodge_iframes = 0.25
+dodge_distance = 3.6
+dodge_cooldown = 0.6
+perfect_dodge_window = 0.12
+perfect_dodge_slow_scale = 0.3
+perfect_dodge_slow_time = 0.3
+perfect_dodge_energy = 10.0
+guard_damage_taken = 0.3
+perfect_guard_window = 0.18
+perfect_guard_stun = 0.8
+perfect_guard_energy = 15.0
+perfect_guard_counter_mult = 1.6
+guard_stability_max = 30.0
+guard_stability_per_hit = 5.0
+guard_stability_regen = 5.0
+guard_broken_stun = 0.6
+special_cost = 100.0
+special_duration = 0.9
+special_damage_mult = 3.0
+special_radius = 2.5
+special_hit_from = 0.1
+special_hit_to = 0.75
+special_hitstop = 0.15
+special_invincible = 1.0
+special_shake = 0.35
+energy_per_hit = 6.0
+energy_when_hit = 3.0
+hurt_iframes = 0.8
+hurt_stun = 0.25
+hurt_knockback_mult = 4.0
+hit_shake = 0.22
+crit_chance = 0.08
+crit_mult = 1.5
+dummy_health = 120.0
+dummy_damage = 12.0
+dummy_telegraph = 0.4
+dummy_swing = 0.18
+dummy_reach = 2.2
+dummy_period = 2.6
+lock_radius = 8.0

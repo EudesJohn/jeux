@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AchievementData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/AchievementData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "duo_de_choc"
+title = "Duo de choc"
+description = "Terminer un niveau en coop WiFi."
+stat = "coop_levels"
+target = 1
+hidden = false

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_b7ucc"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_ffwf1"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_s0dal"]
+
+[sub_resource type="Resource" id="Resource_6seyq"]
+script = ExtResource("2_ffwf1")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_x6s1a"]
+script = ExtResource("1_b7ucc")
+enemies = Array[ExtResource("2_ffwf1")]([SubResource("Resource_6seyq")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_w44fh"]
+script = ExtResource("2_ffwf1")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_3ax6n"]
+script = ExtResource("2_ffwf1")
+type = "scout"
+count = 1
+
+[sub_resource type="Resource" id="Resource_ljuh7"]
+script = ExtResource("1_b7ucc")
+enemies = Array[ExtResource("2_ffwf1")]([SubResource("Resource_w44fh"), SubResource("Resource_3ax6n")])
+delay = 1.2
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_s0dal")
+id = "rescue_03"
+chapter = 1
+number = 3
+display_name = "Porte du marché"
+layout = "lane"
+length_m = 90.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "rescue"
+time_limit = 150
+prisoners = 1
+escorts = 0
+ally_life = 40.0
+enemy_waves = Array[ExtResource("1_b7ucc")]([SubResource("Resource_x6s1a"), SubResource("Resource_ljuh7")])
+hazards = Array[String]([])
+hazards_per_kind = 2
+cauri_pickups = 7
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 52
+star_time_silver = 75
+star_time_gold = 50

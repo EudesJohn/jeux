@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_khvfo"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_tlqbn"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_lwwag"]
+
+[sub_resource type="Resource" id="Resource_u4sqb"]
+script = ExtResource("2_tlqbn")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_yhx2u"]
+script = ExtResource("1_khvfo")
+enemies = Array[ExtResource("2_tlqbn")]([SubResource("Resource_u4sqb")])
+delay = 1.4
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_xqt1g"]
+script = ExtResource("2_tlqbn")
+type = "soldier"
+count = 2
+
+[sub_resource type="Resource" id="Resource_hap5u"]
+script = ExtResource("2_tlqbn")
+type = "scout"
+count = 1
+
+[sub_resource type="Resource" id="Resource_ut64s"]
+script = ExtResource("1_khvfo")
+enemies = Array[ExtResource("2_tlqbn")]([SubResource("Resource_xqt1g"), SubResource("Resource_hap5u")])
+delay = 1.2
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_lwwag")
+id = "lane_01"
+chapter = 1
+number = 1
+display_name = "Cour du palais"
+layout = "lane"
+length_m = 60.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "clear"
+time_limit = 150
+prisoners = 0
+enemy_waves = Array[ExtResource("1_khvfo")]([SubResource("Resource_yhx2u"), SubResource("Resource_ut64s")])
+hazards = Array[String](["pit"])
+hazards_per_kind = 1
+cauri_pickups = 6
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 40
+star_time_silver = 100
+star_time_gold = 70

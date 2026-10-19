@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="BossData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/BossData.gd" id="1_fw67q"]
+
+[resource]
+script = ExtResource("1_fw67q")
+id = "shadow_sorcerer"
+display_name = "Sorcier des ténèbres"
+chapter = 4
+health = 850.0
+damage = 16.0
+speed = 2.7
+attack_range = 2.8
+telegraph_time = 0.65
+recover_time = 0.85
+contact_damage = 8.0
+drops_cauris = 120
+attacks = Array[String](["teleport", "orbs"])
+phase_2_attacks = Array[String](["arrows"])
+phase_3_attacks = Array[String](["orbs"])
+charge_distance = 12.0
+charge_width = 2.2
+sweep_radius = 3.6
+slam_radius = 5.5
+arrow_count = 5
+arrow_radius = 2.0
+combo_hits = 1
+summon_phase = 0
+summon_count = 0
+summon_type = "soldier"
+armor_guards = 0
+darken_arena = true
+tint = Color(0.28, 0.16, 0.42, 1)
+model_scale = 1.9

@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_ng4pq"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_78xcb"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_fdmvm"]
+
+[sub_resource type="Resource" id="Resource_j377u"]
+script = ExtResource("2_78xcb")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_2p050"]
+script = ExtResource("1_ng4pq")
+enemies = Array[ExtResource("2_78xcb")]([SubResource("Resource_j377u")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_m872b"]
+script = ExtResource("2_78xcb")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_v1aef"]
+script = ExtResource("2_78xcb")
+type = "scout"
+count = 3
+
+[sub_resource type="Resource" id="Resource_3kx5c"]
+script = ExtResource("1_ng4pq")
+enemies = Array[ExtResource("2_78xcb")]([SubResource("Resource_m872b"), SubResource("Resource_v1aef")])
+delay = 1.2
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_fdmvm")
+id = "ch2_l4"
+chapter = 2
+number = 4
+display_name = "Le relais des porteurs"
+layout = "lane"
+length_m = 110.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "clear"
+time_limit = 114
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_ng4pq")]([SubResource("Resource_2p050"), SubResource("Resource_3kx5c")])
+hazards = Array[String](["pit", "arrows"])
+hazards_per_kind = 2
+cauri_pickups = 10
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "village"
+reward_cauris = 57
+star_time_silver = 62
+star_time_gold = 39

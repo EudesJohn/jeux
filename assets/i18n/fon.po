@@ -1,0 +1,826 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Guerriere d'Abomey 1.0\n"
+"Language: fon\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: GUERRIÈRE D'ABOMEY
+msgid "GUERRIÈRE D'ABOMEY"
+msgstr "GUERRIÈRE D'ABOMEY"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Libère les prisonniers. Traverse le royaume.
+msgid "Libère les prisonniers. Traverse le royaume."
+msgstr "Libère les prisonniers. Traverse le royaume."
+
+#: Jouer
+msgid "Jouer"
+msgstr "Da wǔ"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Coop WiFi
+msgid "Coop WiFi"
+msgstr "Coop WiFi"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: 2 joueuses sur le même WiFi local (hotspot ou box).
+msgid "2 joueuses sur le même WiFi local (hotspot ou box)."
+msgstr "2 joueuses sur le même WiFi local (hotspot ou box)."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Armurerie
+msgid "Armurerie"
+msgstr "Armurerie"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Réglages
+msgid "Réglages"
+msgstr "Réglages"
+
+#: Quitter
+msgid "Quitter"
+msgstr "Sín"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Niveaux PHASE 3
+msgid "Niveaux PHASE 3"
+msgstr "Niveaux PHASE 3"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Sauvetage PHASE 4
+msgid "Sauvetage PHASE 4"
+msgstr "Sauvetage PHASE 4"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Arène PHASE 2
+msgid "Arène PHASE 2"
+msgstr "Arène PHASE 2"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Réglage
+msgid "Réglage"
+msgstr "Réglage"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Combat PHASE 1
+msgid "Combat PHASE 1"
+msgstr "Combat PHASE 1"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: CHOISIR UN MODE
+msgid "CHOISIR UN MODE"
+msgstr "CHOISIR UN MODE"
+
+#: Aventure
+msgid "Aventure"
+msgstr "Kpéé"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: 5 chapitres, 25 niveaux, la carte du royaume et ses étoiles.
+msgid "5 chapitres, 25 niveaux, la carte du royaume et ses étoiles."
+msgstr "5 chapitres, 25 niveaux, la carte du royaume et ses étoiles."
+
+#: Sauvetage
+msgid "Sauvetage"
+msgstr "Hùnmɛ́"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: 17 niveaux + une escorte : libérer les prisonniers avant le 
+msgid "17 niveaux + une escorte : libérer les prisonniers avant le temps."
+msgstr "17 niveaux + une escorte : libérer les prisonniers avant le temps."
+
+#: Survie
+msgid "Survie"
+msgstr "Nɔ̀ gbɔ̀n"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Vagues sans fin, un bonus entre chaque vague — record : %d.
+msgid "Vagues sans fin, un bonus entre chaque vague — record : %d."
+msgstr "Vagues sans fin, un bonus entre chaque vague — record : %d."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Chasse aux boss
+msgid "Chasse aux boss"
+msgstr "Chasse aux boss"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: %d gardien(s) débloqué(s) : les enchaîner, sans pause.
+msgid "%d gardien(s) débloqué(s) : les enchaîner, sans pause."
+msgstr "%d gardien(s) débloqué(s) : les enchaîner, sans pause."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Défi du jour
+msgid "Défi du jour"
+msgstr "Défi du jour"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Défi du jour — %s
+msgid "Défi du jour — %s"
+msgstr "Défi du jour — %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: — série : %d jour(s).
+msgid "— série : %d jour(s)."
+msgstr "— série : %d jour(s)."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Arène d'entraînement
+msgid "Arène d'entraînement"
+msgstr "Arène d'entraînement"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Mannequins, verrouillage et garde parfaite — pour sentir le 
+msgid "Mannequins, verrouillage et garde parfaite — pour sentir le combat."
+msgstr "Mannequins, verrouillage et garde parfaite — pour sentir le combat."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Disponible dans une prochaine phase.
+msgid "Disponible dans une prochaine phase."
+msgstr "Disponible dans une prochaine phase."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: CARTE DU ROYAUME
+msgid "CARTE DU ROYAUME"
+msgstr "CARTE DU ROYAUME"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: CHAPITRE %d — %s
+msgid "CHAPITRE %d — %s"
+msgstr "CHAPITRE %d — %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: CHAPITRE %d — NIVEAU %d
+msgid "CHAPITRE %d — NIVEAU %d"
+msgstr "CHAPITRE %d — NIVEAU %d"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Chapitre %d
+msgid "Chapitre %d"
+msgstr "Chapitre %d"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: CAURIS %d
+msgid "CAURIS %d"
+msgstr "CAURIS %d"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: JOUER
+msgid "JOUER"
+msgstr "JOUER"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Libérer les prisonniers
+msgid "Libérer les prisonniers"
+msgstr "Libérer les prisonniers"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Vaincre le gardien
+msgid "Vaincre le gardien"
+msgstr "Vaincre le gardien"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Vaincre le boss
+msgid "Vaincre le boss"
+msgstr "Vaincre le boss"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Vaincre toutes les vagues
+msgid "Vaincre toutes les vagues"
+msgstr "Vaincre toutes les vagues"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Escorter le villageois
+msgid "Escorter le villageois"
+msgstr "Escorter le villageois"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Atteindre la sortie
+msgid "Atteindre la sortie"
+msgstr "Atteindre la sortie"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Choisis un niveau sur la carte.
+msgid "Choisis un niveau sur la carte."
+msgstr "Choisis un niveau sur la carte."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Les collines d'Abomey
+msgid "Les collines d'Abomey"
+msgstr "Les collines d'Abomey"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: La route du sel
+msgid "La route du sel"
+msgstr "La route du sel"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: La forêt sacrée
+msgid "La forêt sacrée"
+msgstr "La forêt sacrée"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Les remparts de nuit
+msgid "Les remparts de nuit"
+msgstr "Les remparts de nuit"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Le palais du roi
+msgid "Le palais du roi"
+msgstr "Le palais du roi"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: SAUVETAGE
+msgid "SAUVETAGE"
+msgstr "SAUVETAGE"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: OBJECTIF VERROUILLÉ
+msgid "OBJECTIF VERROUILLÉ"
+msgstr "OBJECTIF VERROUILLÉ"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: ESCORTE
+msgid "ESCORTE"
+msgstr "ESCORTE"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: %d prisonnier%s
+msgid "%d prisonnier%s"
+msgstr "%d prisonnier%s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: %d villageois
+msgid "%d villageois"
+msgstr "%d villageois"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: · NUIT
+msgid "· NUIT"
+msgstr "· NUIT"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: ARMURERIE
+msgid "ARMURERIE"
+msgstr "ARMURERIE"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Améliorations permanentes : elles s'appliquent à chaque nive
+msgid "Améliorations permanentes : elles s'appliquent à chaque niveau."
+msgstr "Améliorations permanentes : elles s'appliquent à chaque niveau."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Acheter
+msgid "Acheter"
+msgstr "Acheter"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Retour au menu
+msgid "Retour au menu"
+msgstr "Retour au menu"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Cette amélioration est déjà au maximum.
+msgid "Cette amélioration est déjà au maximum."
+msgstr "Cette amélioration est déjà au maximum."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Pas assez de cauris (il en manque %d).
+msgid "Pas assez de cauris (il en manque %d)."
+msgstr "Pas assez de cauris (il en manque %d)."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: %s améliorée — niveau %d !
+msgid "%s améliorée — niveau %d !"
+msgstr "%s améliorée — niveau %d !"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: %d cauris
+msgid "%d cauris"
+msgstr "%d cauris"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Niveau %d / %d  %s
+msgid "Niveau %d / %d  %s"
+msgstr "Niveau %d / %d  %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Vitalité
+msgid "Vitalité"
+msgstr "Vitalité"
+
+#: Force
+msgid "Force"
+msgstr "Sè"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Souffle
+msgid "Souffle"
+msgstr "Souffle"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: +10 vie maximale par niveau
+msgid "+10 vie maximale par niveau"
+msgstr "+10 vie maximale par niveau"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: +8 % de dégâts par niveau
+msgid "+8 % de dégâts par niveau"
+msgstr "+8 % de dégâts par niveau"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: +20 énergie au départ par niveau
+msgid "+20 énergie au départ par niveau"
+msgstr "+20 énergie au départ par niveau"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: RÉGLAGES
+msgid "RÉGLAGES"
+msgstr "RÉGLAGES"
+
+#: Musique
+msgid "Musique"
+msgstr "Wè"
+
+#: Effets
+msgid "Effets"
+msgstr "Súsú"
+
+#: Voix
+msgid "Voix"
+msgstr "Kpanle"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Taille des boutons
+msgid "Taille des boutons"
+msgstr "Taille des boutons"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Opacité des boutons
+msgid "Opacité des boutons"
+msgstr "Opacité des boutons"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Échelle 3D
+msgid "Échelle 3D"
+msgstr "Échelle 3D"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Difficulté
+msgid "Difficulté"
+msgstr "Difficulté"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Facile
+msgid "Facile"
+msgstr "Facile"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Normal
+msgid "Normal"
+msgstr "Normal"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Difficile
+msgid "Difficile"
+msgstr "Difficile"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Qualité graphique
+msgid "Qualité graphique"
+msgstr "Qualité graphique"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Faible
+msgid "Faible"
+msgstr "Faible"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Moyenne
+msgid "Moyenne"
+msgstr "Moyenne"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Haute
+msgid "Haute"
+msgstr "Haute"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Langue
+msgid "Langue"
+msgstr "Langue"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Vibration
+msgid "Vibration"
+msgstr "Vibration"
+
+#: Retour
+msgid "Retour"
+msgstr "Lɛ̌kɔ́"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: PAUSE
+msgid "PAUSE"
+msgstr "PAUSE"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Reprendre
+msgid "Reprendre"
+msgstr "Reprendre"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Recommencer
+msgid "Recommencer"
+msgstr "Recommencer"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Quitter le niveau
+msgid "Quitter le niveau"
+msgstr "Quitter le niveau"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: CONTINUER
+msgid "CONTINUER"
+msgstr "CONTINUER"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: REJOUER
+msgid "REJOUER"
+msgstr "REJOUER"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: MENU
+msgid "MENU"
+msgstr "MENU"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: ÉCHEC
+msgid "ÉCHEC"
+msgstr "ÉCHEC"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: NIVEAU TERMINÉ
+msgid "NIVEAU TERMINÉ"
+msgstr "NIVEAU TERMINÉ"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: tu es tombée au combat
+msgid "tu es tombée au combat"
+msgstr "tu es tombée au combat"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: un prisonnier est mort
+msgid "un prisonnier est mort"
+msgstr "un prisonnier est mort"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: le villageois est mort
+msgid "le villageois est mort"
+msgstr "le villageois est mort"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: temps écoulé
+msgid "temps écoulé"
+msgstr "temps écoulé"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: objectif manqué
+msgid "objectif manqué"
+msgstr "objectif manqué"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: %s      %s restantes      +%d cauris
+msgid "%s      %s restantes      +%d cauris"
+msgstr "%s      %s restantes      +%d cauris"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: %d vague(s) — record %d%s
+msgid "%d vague(s) — record %d%s"
+msgstr "%d vague(s) — record %d%s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: (NOUVEAU !)
+msgid "(NOUVEAU !)"
+msgstr "(NOUVEAU !)"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: BONUS : %s
+msgid "BONUS : %s"
+msgstr "BONUS : %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: VIE %d / %d      ÉNERGIE %d / %d
+msgid "VIE %d / %d      ÉNERGIE %d / %d"
+msgstr "VIE %d / %d      ÉNERGIE %d / %d"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: PRISONNIERS %d/%d
+msgid "PRISONNIERS %d/%d"
+msgstr "PRISONNIERS %d/%d"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: GARDIEN : %s
+msgid "GARDIEN : %s"
+msgstr "GARDIEN : %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: GARDE PARFAITE !
+msgid "GARDE PARFAITE !"
+msgstr "GARDE PARFAITE !"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: ESQUIVE PARFAITE !
+msgid "ESQUIVE PARFAITE !"
+msgstr "ESQUIVE PARFAITE !"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: GARDE BRISÉE
+msgid "GARDE BRISÉE"
+msgstr "GARDE BRISÉE"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: SPÉCIAL PRÊT
+msgid "SPÉCIAL PRÊT"
+msgstr "SPÉCIAL PRÊT"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: VAGUE %d REPOUSSÉE — CHOISIR UN BONUS
+msgid "VAGUE %d REPOUSSÉE — CHOISIR UN BONUS"
+msgstr "VAGUE %d REPOUSSÉE — CHOISIR UN BONUS"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: SOIN
+msgid "SOIN"
+msgstr "SOIN"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: ÉNERGIE
+msgid "ÉNERGIE"
+msgstr "ÉNERGIE"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: FORCE
+msgid "FORCE"
+msgstr "FORCE"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: +40 % de vie
+msgid "+40 % de vie"
+msgstr "+40 % de vie"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: +15 % de dégâts
+msgid "+15 % de dégâts"
+msgstr "+15 % de dégâts"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Spécial rechargé
+msgid "Spécial rechargé"
+msgstr "Spécial rechargé"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Libérer les prisonniers (%d/%d)
+msgid "Libérer les prisonniers (%d/%d)"
+msgstr "Libérer les prisonniers (%d/%d)"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Escorter le villageois jusqu'à la sortie (%d/%d)
+msgid "Escorter le villageois jusqu'à la sortie (%d/%d)"
+msgstr "Escorter le villageois jusqu'à la sortie (%d/%d)"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Éliminer tous les ennemis (%d / %d vagues)
+msgid "Éliminer tous les ennemis (%d / %d vagues)"
+msgstr "Éliminer tous les ennemis (%d / %d vagues)"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Survie — vague %d
+msgid "Survie — vague %d"
+msgstr "Survie — vague %d"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Tenir jusqu'à la fin du temps
+msgid "Tenir jusqu'à la fin du temps"
+msgstr "Tenir jusqu'à la fin du temps"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Villageois perdu
+msgid "Villageois perdu"
+msgstr "Villageois perdu"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: COOP WIFI — 2 JOUEUSES
+msgid "COOP WIFI — 2 JOUEUSES"
+msgstr "COOP WIFI — 2 JOUEUSES"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Héberger une partie
+msgid "Héberger une partie"
+msgstr "Héberger une partie"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Rejoindre une partie
+msgid "Rejoindre une partie"
+msgstr "Rejoindre une partie"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Se connecter
+msgid "Se connecter"
+msgstr "Se connecter"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Commencer
+msgid "Commencer"
+msgstr "Commencer"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: IP de l'hôte (ex. 192.168.43.1)
+msgid "IP de l'hôte (ex. 192.168.43.1)"
+msgstr "IP de l'hôte (ex. 192.168.43.1)"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Recherche des parties sur le réseau… (ou tape l'IP de l'hôte
+msgid "Recherche des parties sur le réseau… (ou tape l'IP de l'hôte)"
+msgstr "Recherche des parties sur le réseau… (ou tape l'IP de l'hôte)"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: En attente d'une joueuse…
+msgid "En attente d'une joueuse…"
+msgstr "En attente d'une joueuse…"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Connectée
+msgid "Connectée"
+msgstr "Connectée"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Aucune partie détectée. Tape l'IP affichée sur l'autre télép
+msgid "Aucune partie détectée. Tape l'IP affichée sur l'autre téléphone."
+msgstr "Aucune partie détectée. Tape l'IP affichée sur l'autre téléphone."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Connexion impossible. Vérifie que les deux téléphones sont s
+msgid "Connexion impossible. Vérifie que les deux téléphones sont sur le"
+msgstr "Connexion impossible. Vérifie que les deux téléphones sont sur le"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: MÊME réseau (le plus simple : le hotspot d'un des deux) et q
+msgid "MÊME réseau (le plus simple : le hotspot d'un des deux) et que l'IP est bonne."
+msgstr "MÊME réseau (le plus simple : le hotspot d'un des deux) et que l'IP est bonne."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Un seul réseau WiFi : la box, ou le hotspot de l'un des deux
+msgid "Un seul réseau WiFi : la box, ou le hotspot de l'un des deux téléphones."
+msgstr "Un seul réseau WiFi : la box, ou le hotspot de l'un des deux téléphones."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: La joueuse est partie. En attente…
+msgid "La joueuse est partie. En attente…"
+msgstr "La joueuse est partie. En attente…"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Joueuse %d connectée — prêt.
+msgid "Joueuse %d connectée — prêt."
+msgstr "Joueuse %d connectée — prêt."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Joueuse %d à terre — %d s pour la relever !
+msgid "Joueuse %d à terre — %d s pour la relever !"
+msgstr "Joueuse %d à terre — %d s pour la relever !"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Joueuse %d relevée.
+msgid "Joueuse %d relevée."
+msgstr "Joueuse %d relevée."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Joueuse %d a quitté la partie — tu continues en solo.
+msgid "Joueuse %d a quitté la partie — tu continues en solo."
+msgstr "Joueuse %d a quitté la partie — tu continues en solo."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Arène coop
+msgid "Arène coop"
+msgstr "Arène coop"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Couloir coop
+msgid "Couloir coop"
+msgstr "Couloir coop"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Niveau : %s
+msgid "Niveau : %s"
+msgstr "Niveau : %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Niveau : Couloir coop
+msgid "Niveau : Couloir coop"
+msgstr "Niveau : Couloir coop"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Joueuse %s
+msgid "Joueuse %s"
+msgstr "Joueuse %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Le jeu ralentit (%d images/s). Passer en qualité %s ?
+msgid "Le jeu ralentit (%d images/s). Passer en qualité %s ?"
+msgstr "Le jeu ralentit (%d images/s). Passer en qualité %s ?"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Oui, alléger
+msgid "Oui, alléger"
+msgstr "Oui, alléger"
+
+#: Non
+msgid "Non"
+msgstr "Eǒ"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: BUTS DU JOUR
+msgid "BUTS DU JOUR"
+msgstr "BUTS DU JOUR"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Récompense : %d cauris
+msgid "Récompense : %d cauris"
+msgstr "Récompense : %d cauris"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Vaincre %d ennemis aujourd'hui.
+msgid "Vaincre %d ennemis aujourd'hui."
+msgstr "Vaincre %d ennemis aujourd'hui."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Réussir %d gardes parfaites aujourd'hui.
+msgid "Réussir %d gardes parfaites aujourd'hui."
+msgstr "Réussir %d gardes parfaites aujourd'hui."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Libérer %d prisonniers aujourd'hui.
+msgid "Libérer %d prisonniers aujourd'hui."
+msgstr "Libérer %d prisonniers aujourd'hui."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Terminer %d niveau(x) aujourd'hui.
+msgid "Terminer %d niveau(x) aujourd'hui."
+msgstr "Terminer %d niveau(x) aujourd'hui."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Tenir %d vagues en Survie aujourd'hui.
+msgid "Tenir %d vagues en Survie aujourd'hui."
+msgstr "Tenir %d vagues en Survie aujourd'hui."
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Succès
+msgid "Succès"
+msgstr "Succès"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: SUCCÈS
+msgid "SUCCÈS"
+msgstr "SUCCÈS"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: SUCCÈS : %s
+msgid "SUCCÈS : %s"
+msgstr "SUCCÈS : %s"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Succès débloqués
+msgid "Succès débloqués"
+msgstr "Succès débloqués"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Verrouillé
+msgid "Verrouillé"
+msgstr "Verrouillé"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: Aucun succès pour le moment : joue un niveau !
+msgid "Aucun succès pour le moment : joue un niveau !"
+msgstr "Aucun succès pour le moment : joue un niveau !"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: dégâts ennemis doublés
+msgid "dégâts ennemis doublés"
+msgstr "dégâts ennemis doublés"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: ennemis rapides
+msgid "ennemis rapides"
+msgstr "ennemis rapides"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: une seule vie
+msgid "une seule vie"
+msgstr "une seule vie"
+
+#. À TRADUIRE : relu par un locuteur natif du fon (§ 24)
+#: réanimation
+msgid "réanimation"
+msgstr "réanimation"

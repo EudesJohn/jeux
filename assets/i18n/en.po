@@ -1,0 +1,671 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Guerriere d'Abomey 1.0\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: GUERRIÈRE D'ABOMEY
+msgid "GUERRIÈRE D'ABOMEY"
+msgstr "WARRIOR OF ABOMEY"
+
+#: Libère les prisonniers. Traverse le royaume.
+msgid "Libère les prisonniers. Traverse le royaume."
+msgstr "Free the prisoners. Cross the kingdom."
+
+#: Jouer
+msgid "Jouer"
+msgstr "Play"
+
+#: Coop WiFi
+msgid "Coop WiFi"
+msgstr "Wi-Fi co-op"
+
+#: 2 joueuses sur le même WiFi local (hotspot ou box).
+msgid "2 joueuses sur le même WiFi local (hotspot ou box)."
+msgstr "2 players on the same local Wi-Fi (hotspot or router)."
+
+#: Armurerie
+msgid "Armurerie"
+msgstr "Armoury"
+
+#: Réglages
+msgid "Réglages"
+msgstr "Settings"
+
+#: Quitter
+msgid "Quitter"
+msgstr "Quit"
+
+#: Niveaux PHASE 3
+msgid "Niveaux PHASE 3"
+msgstr "Phase 3 levels"
+
+#: Sauvetage PHASE 4
+msgid "Sauvetage PHASE 4"
+msgstr "Phase 4 rescue"
+
+#: Arène PHASE 2
+msgid "Arène PHASE 2"
+msgstr "Phase 2 arena"
+
+#: Réglage
+msgid "Réglage"
+msgstr "Balance test"
+
+#: Combat PHASE 1
+msgid "Combat PHASE 1"
+msgstr "Phase 1 combat"
+
+#: CHOISIR UN MODE
+msgid "CHOISIR UN MODE"
+msgstr "CHOOSE A MODE"
+
+#: Aventure
+msgid "Aventure"
+msgstr "Adventure"
+
+#: 5 chapitres, 25 niveaux, la carte du royaume et ses étoiles.
+msgid "5 chapitres, 25 niveaux, la carte du royaume et ses étoiles."
+msgstr "5 chapters, 25 levels, the kingdom map and its stars."
+
+#: Sauvetage
+msgid "Sauvetage"
+msgstr "Rescue"
+
+#: 17 niveaux + une escorte : libérer les prisonniers avant le 
+msgid "17 niveaux + une escorte : libérer les prisonniers avant le temps."
+msgstr "17 levels + an escort: free the prisoners before time runs out."
+
+#: Survie
+msgid "Survie"
+msgstr "Survival"
+
+#: Vagues sans fin, un bonus entre chaque vague — record : %d.
+msgid "Vagues sans fin, un bonus entre chaque vague — record : %d."
+msgstr "Endless waves, a bonus between each wave — record: %d."
+
+#: Chasse aux boss
+msgid "Chasse aux boss"
+msgstr "Boss hunt"
+
+#: %d gardien(s) débloqué(s) : les enchaîner, sans pause.
+msgid "%d gardien(s) débloqué(s) : les enchaîner, sans pause."
+msgstr "%d guardian(s) unlocked: chain them, no pause."
+
+#: Défi du jour
+msgid "Défi du jour"
+msgstr "Daily challenge"
+
+#: Défi du jour — %s
+msgid "Défi du jour — %s"
+msgstr "Daily challenge — %s"
+
+#: — série : %d jour(s).
+msgid "— série : %d jour(s)."
+msgstr "— streak: %d day(s)."
+
+#: Arène d'entraînement
+msgid "Arène d'entraînement"
+msgstr "Training arena"
+
+#: Mannequins, verrouillage et garde parfaite — pour sentir le 
+msgid "Mannequins, verrouillage et garde parfaite — pour sentir le combat."
+msgstr "Dummies, lock-on and perfect guard — to feel the combat."
+
+#: Disponible dans une prochaine phase.
+msgid "Disponible dans une prochaine phase."
+msgstr "Coming in a later phase."
+
+#: CARTE DU ROYAUME
+msgid "CARTE DU ROYAUME"
+msgstr "KINGDOM MAP"
+
+#: CHAPITRE %d — %s
+msgid "CHAPITRE %d — %s"
+msgstr "CHAPTER %d — %s"
+
+#: CHAPITRE %d — NIVEAU %d
+msgid "CHAPITRE %d — NIVEAU %d"
+msgstr "CHAPTER %d — LEVEL %d"
+
+#: Chapitre %d
+msgid "Chapitre %d"
+msgstr "Chapter %d"
+
+#: CAURIS %d
+msgid "CAURIS %d"
+msgstr "COWRIES %d"
+
+#: JOUER
+msgid "JOUER"
+msgstr "PLAY"
+
+#: Libérer les prisonniers
+msgid "Libérer les prisonniers"
+msgstr "Free the prisoners"
+
+#: Vaincre le gardien
+msgid "Vaincre le gardien"
+msgstr "Defeat the guardian"
+
+#: Vaincre le boss
+msgid "Vaincre le boss"
+msgstr "Defeat the boss"
+
+#: Vaincre toutes les vagues
+msgid "Vaincre toutes les vagues"
+msgstr "Defeat all waves"
+
+#: Escorter le villageois
+msgid "Escorter le villageois"
+msgstr "Escort the villager"
+
+#: Atteindre la sortie
+msgid "Atteindre la sortie"
+msgstr "Reach the exit"
+
+#: Choisis un niveau sur la carte.
+msgid "Choisis un niveau sur la carte."
+msgstr "Pick a level on the map."
+
+#: Les collines d'Abomey
+msgid "Les collines d'Abomey"
+msgstr "The hills of Abomey"
+
+#: La route du sel
+msgid "La route du sel"
+msgstr "The salt road"
+
+#: La forêt sacrée
+msgid "La forêt sacrée"
+msgstr "The sacred forest"
+
+#: Les remparts de nuit
+msgid "Les remparts de nuit"
+msgstr "The night ramparts"
+
+#: Le palais du roi
+msgid "Le palais du roi"
+msgstr "The king's palace"
+
+#: SAUVETAGE
+msgid "SAUVETAGE"
+msgstr "RESCUE"
+
+#: OBJECTIF VERROUILLÉ
+msgid "OBJECTIF VERROUILLÉ"
+msgstr "OBJECTIVE LOCKED"
+
+#: ESCORTE
+msgid "ESCORTE"
+msgstr "ESCORT"
+
+#: %d prisonnier%s
+msgid "%d prisonnier%s"
+msgstr "%d prisoner%s"
+
+#: %d villageois
+msgid "%d villageois"
+msgstr "%d villager(s)"
+
+#: · NUIT
+msgid "· NUIT"
+msgstr "· NIGHT"
+
+#: ARMURERIE
+msgid "ARMURERIE"
+msgstr "ARMOURY"
+
+#: Améliorations permanentes : elles s'appliquent à chaque nive
+msgid "Améliorations permanentes : elles s'appliquent à chaque niveau."
+msgstr "Permanent upgrades: they apply to every level."
+
+#: Acheter
+msgid "Acheter"
+msgstr "Buy"
+
+#: Retour au menu
+msgid "Retour au menu"
+msgstr "Back to menu"
+
+#: Cette amélioration est déjà au maximum.
+msgid "Cette amélioration est déjà au maximum."
+msgstr "This upgrade is already maxed out."
+
+#: Pas assez de cauris (il en manque %d).
+msgid "Pas assez de cauris (il en manque %d)."
+msgstr "Not enough cowries (missing %d)."
+
+#: %s améliorée — niveau %d !
+msgid "%s améliorée — niveau %d !"
+msgstr "%s upgraded — level %d!"
+
+#: %d cauris
+msgid "%d cauris"
+msgstr "%d cowries"
+
+#: Niveau %d / %d  %s
+msgid "Niveau %d / %d  %s"
+msgstr "Level %d / %d  %s"
+
+#: Vitalité
+msgid "Vitalité"
+msgstr "Vitality"
+
+#: Force
+msgid "Force"
+msgstr "Might"
+
+#: Souffle
+msgid "Souffle"
+msgstr "Breath"
+
+#: +10 vie maximale par niveau
+msgid "+10 vie maximale par niveau"
+msgstr "+10 max health per level"
+
+#: +8 % de dégâts par niveau
+msgid "+8 % de dégâts par niveau"
+msgstr "+8% damage per level"
+
+#: +20 énergie au départ par niveau
+msgid "+20 énergie au départ par niveau"
+msgstr "+20 starting energy per level"
+
+#: RÉGLAGES
+msgid "RÉGLAGES"
+msgstr "SETTINGS"
+
+#: Musique
+msgid "Musique"
+msgstr "Music"
+
+#: Effets
+msgid "Effets"
+msgstr "Effects"
+
+#: Voix
+msgid "Voix"
+msgstr "Voice"
+
+#: Taille des boutons
+msgid "Taille des boutons"
+msgstr "Button size"
+
+#: Opacité des boutons
+msgid "Opacité des boutons"
+msgstr "Button opacity"
+
+#: Échelle 3D
+msgid "Échelle 3D"
+msgstr "3D scale"
+
+#: Difficulté
+msgid "Difficulté"
+msgstr "Difficulty"
+
+#: Facile
+msgid "Facile"
+msgstr "Easy"
+
+#: Normal
+msgid "Normal"
+msgstr "Normal"
+
+#: Difficile
+msgid "Difficile"
+msgstr "Hard"
+
+#: Qualité graphique
+msgid "Qualité graphique"
+msgstr "Graphics quality"
+
+#: Faible
+msgid "Faible"
+msgstr "Low"
+
+#: Moyenne
+msgid "Moyenne"
+msgstr "Medium"
+
+#: Haute
+msgid "Haute"
+msgstr "High"
+
+#: Langue
+msgid "Langue"
+msgstr "Language"
+
+#: Vibration
+msgid "Vibration"
+msgstr "Vibration"
+
+#: Retour
+msgid "Retour"
+msgstr "Back"
+
+#: PAUSE
+msgid "PAUSE"
+msgstr "PAUSED"
+
+#: Reprendre
+msgid "Reprendre"
+msgstr "Resume"
+
+#: Recommencer
+msgid "Recommencer"
+msgstr "Restart"
+
+#: Quitter le niveau
+msgid "Quitter le niveau"
+msgstr "Leave level"
+
+#: CONTINUER
+msgid "CONTINUER"
+msgstr "CONTINUE"
+
+#: REJOUER
+msgid "REJOUER"
+msgstr "REPLAY"
+
+#: MENU
+msgid "MENU"
+msgstr "MENU"
+
+#: ÉCHEC
+msgid "ÉCHEC"
+msgstr "FAILED"
+
+#: NIVEAU TERMINÉ
+msgid "NIVEAU TERMINÉ"
+msgstr "LEVEL COMPLETE"
+
+#: tu es tombée au combat
+msgid "tu es tombée au combat"
+msgstr "you fell in battle"
+
+#: un prisonnier est mort
+msgid "un prisonnier est mort"
+msgstr "a prisoner died"
+
+#: le villageois est mort
+msgid "le villageois est mort"
+msgstr "the villager died"
+
+#: temps écoulé
+msgid "temps écoulé"
+msgstr "time is up"
+
+#: objectif manqué
+msgid "objectif manqué"
+msgstr "objective missed"
+
+#: %s      %s restantes      +%d cauris
+msgid "%s      %s restantes      +%d cauris"
+msgstr "%s      %s left      +%d cowries"
+
+#: %d vague(s) — record %d%s
+msgid "%d vague(s) — record %d%s"
+msgstr "%d wave(s) — record %d%s"
+
+#: (NOUVEAU !)
+msgid "(NOUVEAU !)"
+msgstr "(NEW!)"
+
+#: BONUS : %s
+msgid "BONUS : %s"
+msgstr "BONUS: %s"
+
+#: VIE %d / %d      ÉNERGIE %d / %d
+msgid "VIE %d / %d      ÉNERGIE %d / %d"
+msgstr "HEALTH %d / %d      ENERGY %d / %d"
+
+#: PRISONNIERS %d/%d
+msgid "PRISONNIERS %d/%d"
+msgstr "PRISONERS %d/%d"
+
+#: GARDIEN : %s
+msgid "GARDIEN : %s"
+msgstr "GUARDIAN: %s"
+
+#: GARDE PARFAITE !
+msgid "GARDE PARFAITE !"
+msgstr "PERFECT GUARD!"
+
+#: ESQUIVE PARFAITE !
+msgid "ESQUIVE PARFAITE !"
+msgstr "PERFECT DODGE!"
+
+#: GARDE BRISÉE
+msgid "GARDE BRISÉE"
+msgstr "GUARD BROKEN"
+
+#: SPÉCIAL PRÊT
+msgid "SPÉCIAL PRÊT"
+msgstr "SPECIAL READY"
+
+#: VAGUE %d REPOUSSÉE — CHOISIR UN BONUS
+msgid "VAGUE %d REPOUSSÉE — CHOISIR UN BONUS"
+msgstr "WAVE %d REPELLED — CHOOSE A BONUS"
+
+#: SOIN
+msgid "SOIN"
+msgstr "HEAL"
+
+#: ÉNERGIE
+msgid "ÉNERGIE"
+msgstr "ENERGY"
+
+#: FORCE
+msgid "FORCE"
+msgstr "MIGHT"
+
+#: +40 % de vie
+msgid "+40 % de vie"
+msgstr "+40% health"
+
+#: +15 % de dégâts
+msgid "+15 % de dégâts"
+msgstr "+15% damage"
+
+#: Spécial rechargé
+msgid "Spécial rechargé"
+msgstr "Special recharged"
+
+#: Libérer les prisonniers (%d/%d)
+msgid "Libérer les prisonniers (%d/%d)"
+msgstr "Free the prisoners (%d/%d)"
+
+#: Escorter le villageois jusqu'à la sortie (%d/%d)
+msgid "Escorter le villageois jusqu'à la sortie (%d/%d)"
+msgstr "Escort the villager to the exit (%d/%d)"
+
+#: Éliminer tous les ennemis (%d / %d vagues)
+msgid "Éliminer tous les ennemis (%d / %d vagues)"
+msgstr "Defeat every enemy (%d / %d waves)"
+
+#: Survie — vague %d
+msgid "Survie — vague %d"
+msgstr "Survival — wave %d"
+
+#: Tenir jusqu'à la fin du temps
+msgid "Tenir jusqu'à la fin du temps"
+msgstr "Hold out until time runs out"
+
+#: Villageois perdu
+msgid "Villageois perdu"
+msgstr "Villager lost"
+
+#: COOP WIFI — 2 JOUEUSES
+msgid "COOP WIFI — 2 JOUEUSES"
+msgstr "WI-FI CO-OP — 2 PLAYERS"
+
+#: Héberger une partie
+msgid "Héberger une partie"
+msgstr "Host a game"
+
+#: Rejoindre une partie
+msgid "Rejoindre une partie"
+msgstr "Join a game"
+
+#: Se connecter
+msgid "Se connecter"
+msgstr "Connect"
+
+#: Commencer
+msgid "Commencer"
+msgstr "Start"
+
+#: IP de l'hôte (ex. 192.168.43.1)
+msgid "IP de l'hôte (ex. 192.168.43.1)"
+msgstr "Host IP (e.g. 192.168.43.1)"
+
+#: Recherche des parties sur le réseau… (ou tape l'IP de l'hôte
+msgid "Recherche des parties sur le réseau… (ou tape l'IP de l'hôte)"
+msgstr "Searching for games… (or type the host IP)"
+
+#: En attente d'une joueuse…
+msgid "En attente d'une joueuse…"
+msgstr "Waiting for a player…"
+
+#: Connectée
+msgid "Connectée"
+msgstr "Connected"
+
+#: Aucune partie détectée. Tape l'IP affichée sur l'autre télép
+msgid "Aucune partie détectée. Tape l'IP affichée sur l'autre téléphone."
+msgstr "No game detected. Type the IP shown on the other phone."
+
+#: Connexion impossible. Vérifie que les deux téléphones sont s
+msgid "Connexion impossible. Vérifie que les deux téléphones sont sur le"
+msgstr "Connection failed. Check that both phones are on the"
+
+#: MÊME réseau (le plus simple : le hotspot d'un des deux) et q
+msgid "MÊME réseau (le plus simple : le hotspot d'un des deux) et que l'IP est bonne."
+msgstr "SAME network (simplest: one phone's hotspot) and that the IP is right."
+
+#: Un seul réseau WiFi : la box, ou le hotspot de l'un des deux
+msgid "Un seul réseau WiFi : la box, ou le hotspot de l'un des deux téléphones."
+msgstr "One Wi-Fi network: the router, or one phone's hotspot."
+
+#: La joueuse est partie. En attente…
+msgid "La joueuse est partie. En attente…"
+msgstr "The other player left. Waiting…"
+
+#: Joueuse %d connectée — prêt.
+msgid "Joueuse %d connectée — prêt."
+msgstr "Player %d connected — ready."
+
+#: Joueuse %d à terre — %d s pour la relever !
+msgid "Joueuse %d à terre — %d s pour la relever !"
+msgstr "Player %d is down — %d s to revive her!"
+
+#: Joueuse %d relevée.
+msgid "Joueuse %d relevée."
+msgstr "Player %d revived."
+
+#: Joueuse %d a quitté la partie — tu continues en solo.
+msgid "Joueuse %d a quitté la partie — tu continues en solo."
+msgstr "Player %d left the game — you continue solo."
+
+#: Arène coop
+msgid "Arène coop"
+msgstr "Co-op arena"
+
+#: Couloir coop
+msgid "Couloir coop"
+msgstr "Co-op corridor"
+
+#: Niveau : %s
+msgid "Niveau : %s"
+msgstr "Level: %s"
+
+#: Niveau : Couloir coop
+msgid "Niveau : Couloir coop"
+msgstr "Level: Co-op corridor"
+
+#: Joueuse %s
+msgid "Joueuse %s"
+msgstr "Player %s"
+
+#: Le jeu ralentit (%d images/s). Passer en qualité %s ?
+msgid "Le jeu ralentit (%d images/s). Passer en qualité %s ?"
+msgstr "The game is slowing down (%d fps). Switch to %s quality?"
+
+#: Oui, alléger
+msgid "Oui, alléger"
+msgstr "Yes, lighten it"
+
+#: Non
+msgid "Non"
+msgstr "No"
+
+#: BUTS DU JOUR
+msgid "BUTS DU JOUR"
+msgstr "TODAY'S GOALS"
+
+#: Récompense : %d cauris
+msgid "Récompense : %d cauris"
+msgstr "Reward: %d cowries"
+
+#: Vaincre %d ennemis aujourd'hui.
+msgid "Vaincre %d ennemis aujourd'hui."
+msgstr "Defeat %d enemies today."
+
+#: Réussir %d gardes parfaites aujourd'hui.
+msgid "Réussir %d gardes parfaites aujourd'hui."
+msgstr "Land %d perfect guards today."
+
+#: Libérer %d prisonniers aujourd'hui.
+msgid "Libérer %d prisonniers aujourd'hui."
+msgstr "Free %d prisoners today."
+
+#: Terminer %d niveau(x) aujourd'hui.
+msgid "Terminer %d niveau(x) aujourd'hui."
+msgstr "Finish %d level(s) today."
+
+#: Tenir %d vagues en Survie aujourd'hui.
+msgid "Tenir %d vagues en Survie aujourd'hui."
+msgstr "Hold %d Survival waves today."
+
+#: Succès
+msgid "Succès"
+msgstr "Achievements"
+
+#: SUCCÈS
+msgid "SUCCÈS"
+msgstr "ACHIEVEMENTS"
+
+#: SUCCÈS : %s
+msgid "SUCCÈS : %s"
+msgstr "ACHIEVEMENT: %s"
+
+#: Succès débloqués
+msgid "Succès débloqués"
+msgstr "Achievements unlocked"
+
+#: Verrouillé
+msgid "Verrouillé"
+msgstr "Locked"
+
+#: Aucun succès pour le moment : joue un niveau !
+msgid "Aucun succès pour le moment : joue un niveau !"
+msgstr "No achievement yet: play a level!"
+
+#: dégâts ennemis doublés
+msgid "dégâts ennemis doublés"
+msgstr "enemy damage doubled"
+
+#: ennemis rapides
+msgid "ennemis rapides"
+msgstr "fast enemies"
+
+#: une seule vie
+msgid "une seule vie"
+msgstr "single life"
+
+#: réanimation
+msgid "réanimation"
+msgstr "revive"

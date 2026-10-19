@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_41jjh"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_lxai8"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_ls2vt"]
+
+[sub_resource type="Resource" id="Resource_3iqco"]
+script = ExtResource("2_lxai8")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_pvffl"]
+script = ExtResource("1_41jjh")
+enemies = Array[ExtResource("2_lxai8")]([SubResource("Resource_3iqco")])
+delay = 1.3
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_81nw6"]
+script = ExtResource("2_lxai8")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_ymifb"]
+script = ExtResource("2_lxai8")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_jhtmx"]
+script = ExtResource("1_41jjh")
+enemies = Array[ExtResource("2_lxai8")]([SubResource("Resource_81nw6"), SubResource("Resource_ymifb")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_td0d7"]
+script = ExtResource("2_lxai8")
+type = "archer"
+count = 2
+
+[sub_resource type="Resource" id="Resource_khske"]
+script = ExtResource("2_lxai8")
+type = "soldier"
+count = 5
+
+[sub_resource type="Resource" id="Resource_ar3r0"]
+script = ExtResource("1_41jjh")
+enemies = Array[ExtResource("2_lxai8")]([SubResource("Resource_td0d7"), SubResource("Resource_khske")])
+delay = 1.2
+start_delay = 0.5
+
+[sub_resource type="Resource" id="Resource_yyvnf"]
+script = ExtResource("2_lxai8")
+type = "guard"
+count = 2
+
+[sub_resource type="Resource" id="Resource_8h5w8"]
+script = ExtResource("2_lxai8")
+type = "scout"
+count = 2
+
+[sub_resource type="Resource" id="Resource_5jw6r"]
+script = ExtResource("1_41jjh")
+enemies = Array[ExtResource("2_lxai8")]([SubResource("Resource_yyvnf"), SubResource("Resource_8h5w8")])
+delay = 1.15
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_ls2vt")
+id = "ch4_l3"
+chapter = 4
+number = 3
+display_name = "Les fossés"
+layout = "lane"
+length_m = 120.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "clear"
+time_limit = 108
+prisoners = 0
+escorts = 0
+ally_life = 40.0
+boss_id = ""
+boss_chain = Array[String]([])
+endless = false
+enemy_waves = Array[ExtResource("1_41jjh")]([SubResource("Resource_pvffl"), SubResource("Resource_jhtmx"), SubResource("Resource_ar3r0"), SubResource("Resource_5jw6r")])
+hazards = Array[String](["pit", "arrows", "fire", "spikes"])
+hazards_per_kind = 3
+cauri_pickups = 11
+cauri_per_pickup = 3
+potion_pickups = 2
+checkpoint_at = 0.5
+night = true
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 69
+star_time_silver = 59
+star_time_gold = 37

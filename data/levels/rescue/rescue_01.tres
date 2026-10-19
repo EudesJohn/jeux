@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://data/resources/WaveData.gd" id="1_sce43"]
+[ext_resource type="Script" path="res://data/resources/SpawnEntry.gd" id="2_b0lcg"]
+[ext_resource type="Script" path="res://data/resources/LevelData.gd" id="3_tsflv"]
+
+[sub_resource type="Resource" id="Resource_ejcux"]
+script = ExtResource("2_b0lcg")
+type = "soldier"
+count = 3
+
+[sub_resource type="Resource" id="Resource_oj6mq"]
+script = ExtResource("1_sce43")
+enemies = Array[ExtResource("2_b0lcg")]([SubResource("Resource_ejcux")])
+delay = 1.3
+start_delay = 0.5
+
+[resource]
+script = ExtResource("3_tsflv")
+id = "rescue_01"
+chapter = 1
+number = 1
+display_name = "Chaumières"
+layout = "lane"
+length_m = 70.0
+lane_half_depth = 3.0
+arena_radius = 14.0
+objective = "rescue"
+time_limit = 150
+prisoners = 1
+escorts = 0
+ally_life = 40.0
+enemy_waves = Array[ExtResource("1_sce43")]([SubResource("Resource_oj6mq")])
+hazards = Array[String]([])
+hazards_per_kind = 2
+cauri_pickups = 6
+cauri_per_pickup = 3
+potion_pickups = 1
+checkpoint_at = 0.5
+night = false
+modifier = ""
+music_layer_set = "palace"
+reward_cauris = 44
+star_time_silver = 75
+star_time_gold = 50

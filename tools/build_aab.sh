@@ -15,7 +15,7 @@ cd "$ROOT"
 CFG="export_presets.cfg"
 PASS_FILE="export/android/.pass"
 KEYSTORE="export/android/guerriere-release.keystore"
-OUT="${1:-export/guerriere-abomey-0.8.0.aab}"
+OUT="${1:-export/abomey-warriors-0.8.0.aab}"
 
 [ -f "$PASS_FILE" ] || { echo "Mot de passe absent : $PASS_FILE (voir docs/SIGNATURE_RELEASE.md)" >&2; exit 1; }
 [ -f "$KEYSTORE" ] || { echo "Clé absente : $KEYSTORE (voir docs/SIGNATURE_RELEASE.md)" >&2; exit 1; }

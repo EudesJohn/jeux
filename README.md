@@ -1,4 +1,4 @@
-# Guerrière d'Abomey — version 3D low-poly
+# Abomey Warriors — version 3D low-poly
 
 Source de vérité : **DESIGN.md** (dossier de production § 1 à § 33).
 État détaillé, problèmes connus et commandes de contrôle : **ETAT.md**.
@@ -126,7 +126,7 @@ PHASE 1 (joueuse jouable) : arène de test complète validée par
    - *Permissions* : `VIBRATE`, `INTERNET`, `ACCESS_NETWORK_STATE`, `ACCESS_WIFI_STATE`, `CHANGE_WIFI_MULTICAST_STATE` (INTERNET est requis par ENet LAN, aucune autre utilisation) ;
    - *Textures* 3D : ETC2 / ASTC activé ;
 3. **Clé de debug** : laissée vide (`debug.keystore` par défaut) — suffit pour tester.
-4. Clic **Export Projet** → garde `export/guerriere-abomey-debug.apk`.
+4. Clic **Export Projet** → garde `export/abomey-warriors-debug.apk`.
    - Si le journal affiche *« Tous les outils 'apksigner' … n'ont pas pu s'exécuter »*
      puis *« Le APK résultant n'est pas signé »*, c'est que `apksigner` ne trouve pas
      de Java. Renseigne le JDK dans *Paramètres Éditeur → Export → Android*, ou lance
@@ -137,9 +137,9 @@ PHASE 1 (joueuse jouable) : arène de test complète validée par
 Export en ligne de commande (même résultat, sans ouvrir l'éditeur) :
 ```bash
 export JAVA_HOME="C:/Program Files/Android/Android Studio/jbr"
-godot --headless --path . --export-debug "Android" export/guerriere-abomey-debug.apk
+godot --headless --path . --export-debug "Android" export/abomey-warriors-debug.apk
 ```
-Installation sur téléphone branché : `adb install -r export/guerriere-abomey-debug.apk`
+Installation sur téléphone branché : `adb install -r export/abomey-warriors-debug.apk`
 (`adb` est dans `platform-tools` du SDK Android ; `-r` remplace l'installation précédente).
 
 ## D. AAB Google Play (clé de release)
@@ -150,7 +150,7 @@ sauvegardés dans `~/Documents/Guerriere-Abomey-BACKUP/`). Procédure complète 
 `docs/SIGNATURE_RELEASE.md`.
 
 ```bash
-bash tools/build_aab.sh          # → export/guerriere-abomey-0.8.0.aab
+bash tools/build_aab.sh          # → export/abomey-warriors-0.8.0.aab
 ```
 
 Le script injecte le mot de passe dans le preset `Android AAB` le temps de
@@ -172,6 +172,12 @@ godot --path . --resolution 1280x720 res://tests/StoreShots.tscn
 
 Quatre PNG 1280×720 dans `export/shots/play/` (menu, arène, boss, victoire),
 pris sur les vraies scènes du jeu.
+
+Icône et bannière :
+```bash
+godot --headless --path . --script res://tools/make_store_assets.gd   # icône 512 + calque adaptatif
+python tools/make_store_assets.py                                    # fond adaptatif + bannière 1024×500
+```
 
 ## E. Checklist PHASE 0 (à cocher sur téléphone)
 
@@ -740,7 +746,7 @@ blender -b -P tools/blender/clean_character.py -- --input assets/raw/hero.glb --
 
 ```bash
 bash tools/tester_telephone.sh
-bash tools/tester_telephone.sh --no-build   # réutilise build/guerriere_debug.apk
+bash tools/tester_telephone.sh --no-build   # réutilise build/abomey_warriors_debug.apk
 ```
 
 Le script détecte `adb` et l'appareil, installe avec `-r` (sans effacer les

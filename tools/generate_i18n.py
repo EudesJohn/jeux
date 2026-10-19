@@ -17,7 +17,7 @@ OUT_DIR = pathlib.Path("assets/i18n")
 # (français, anglais) — l'ordre suit les écrans du jeu.
 TEXTES = [
     # ---------------------------------------------------------------- menu
-    ("GUERRIÈRE D'ABOMEY", "WARRIOR OF ABOMEY"),
+    ("ABOMEY WARRIORS", "ABOMEY WARRIORS"),
     ("Libère les prisonniers. Traverse le royaume.",
      "Free the prisoners. Cross the kingdom."),
     ("Jouer", "Play"),

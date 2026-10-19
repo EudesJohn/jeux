@@ -68,7 +68,7 @@ Prérequis, une seule fois :
 ## 4. Vérifier un AAB
 
 ```bash
-keytool -printcert -jarfile export/guerriere-abomey-0.8.0.aab
+keytool -printcert -jarfile export/abomey-warriors-0.8.0.aab
 ```
 
 Le certificat doit afficher `CN=Johnson Studio` et l'empreinte SHA-256 de la

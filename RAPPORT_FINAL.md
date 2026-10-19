@@ -1,4 +1,4 @@
-# Rapport final — Guerrière d'Abomey
+# Rapport final — Abomey Warriors
 
 19 octobre 2026 · Éditeur **Johnson Studio** (Bénin, eudesjohn650@mail.com)
 
@@ -129,7 +129,7 @@ d'ennemis pré-instanciés le supprimerait (à faire, non fait ici).
 - **Coop non mesurée** : il faut deux téléphones.
 - **Version `0.8.0` / code 8** : cohérente avec les phases livrées ; à
   incrémenter à chaque nouvel envoi sur Play.
-- **AAB Play** : produit et signé (`export/guerriere-abomey-0.8.0.aab`), mais
+- **AAB Play** : produit et signé (`export/abomey-warriors-0.8.0.aab`), mais
   pas encore envoyé sur la Play Console.
 - Les chiffres ci-dessus viennent d'un APK debug, avec le moteur en mode debug
   (plus lent qu'un build release) : le release sera au mieux égal.
@@ -139,7 +139,7 @@ Actions humaines restantes :
 2. Nommer les 57 pièces de la planche (`assets/ui/source/planche_assets.noms.txt`).
 3. Coller dans Play Console l'URL de la politique, déjà en ligne :
    <https://eudesjohn.github.io/jeux/POLITIQUE_CONFIDENTIALITE.html>.
-4. Envoyer `export/guerriere-abomey-0.8.0.aab` en piste de test interne.
+4. Envoyer `export/abomey-warriors-0.8.0.aab` en piste de test interne.
 5. Faire le test coop à deux téléphones (tout le reste est automatisé).
 
 Déjà fait le 19 octobre : clé de release + sauvegarde, preset `Android AAB`,

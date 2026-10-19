@@ -181,7 +181,7 @@ def main() -> int:
     conseils_txt = conseils(mesurees)
 
     lignes: list[str] = [
-        "# Rapport téléphone — Guerrière d'Abomey",
+        "# Rapport téléphone — Abomey Warriors",
         "",
         f"Généré le {datetime.now():%d/%m/%Y à %H:%M} par `tools/tester_telephone.sh`.",
         "",

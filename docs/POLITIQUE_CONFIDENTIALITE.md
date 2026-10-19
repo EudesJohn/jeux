@@ -1,4 +1,4 @@
-# Politique de confidentialité — Guerrière d'Abomey
+# Politique de confidentialité — Abomey Warriors
 
 **Éditeur :** Johnson Studio
 **Contact :** eudesjohn650@mail.com
@@ -11,7 +11,7 @@
 
 ### 1. Ce que ce jeu ne fait pas
 
-Guerrière d'Abomey est un jeu **hors ligne**. Il ne demande **aucun compte**, ne
+Abomey Warriors est un jeu **hors ligne**. Il ne demande **aucun compte**, ne
 contient **aucune publicité**, **aucun outil de mesure d'audience** (analytics),
 **aucun module de suivi** ni **aucun service tiers** de collecte.
 
@@ -68,7 +68,7 @@ d'informations les concernant.
 
 Comme aucune donnée personnelle n'est collectée, il n'y a rien à consulter, à
 corriger ou à porter ailleurs. Pour effacer les données locales : désinstaller
-le jeu, ou *Paramètres Android → Applications → Guerrière d'Abomey → Stockage →
+le jeu, ou *Paramètres Android → Applications → Abomey Warriors → Stockage →
 Effacer les données*.
 
 Pour toute question : **eudesjohn650@mail.com** (réponse sous 30 jours).
@@ -85,7 +85,7 @@ mise à jour concernée.
 
 ### 1. What this game does not do
 
-Guerrière d'Abomey is an **offline** game. It requires **no account**, contains
+Abomey Warriors is an **offline** game. It requires **no account**, contains
 **no advertising**, **no analytics** and **no third-party tracking SDK**.
 Johnson Studio **does not collect, transmit or sell any personal data**.
 
@@ -122,7 +122,7 @@ No data collection, no ads, no in-app purchases: the game is safe for children.
 
 Since no personal data is collected, there is nothing to access, correct or
 transfer. To erase local data: uninstall the game, or *Android Settings → Apps →
-Guerrière d'Abomey → Storage → Clear data*. Questions:
+Abomey Warriors → Storage → Clear data*. Questions:
 **eudesjohn650@mail.com** (answered within 30 days).
 
 ### 7. Changes

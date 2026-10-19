@@ -1,4 +1,4 @@
-# Guerrière d'Abomey — Johnson Studio
+# Abomey Warriors — Johnson Studio
 
 Jeu d'action-aventure 3D low-poly, hors ligne, inspiré du royaume du Dahomey.
 

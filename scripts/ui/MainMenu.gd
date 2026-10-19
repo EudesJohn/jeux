@@ -38,7 +38,7 @@ func _build_ui() -> void:
 
 	var title := Label.new()
 	title.name = "Title"
-	title.text = "GUERRIÈRE D'ABOMEY"
+	title.text = "ABOMEY WARRIORS"
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.add_theme_font_size_override("font_size", 40)
 	title.add_theme_color_override("font_color", GOLD)

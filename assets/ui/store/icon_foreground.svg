@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="432" viewBox="0 0 432 432">
+  <!-- Calque avant de l'icône adaptative : logo dans la zone sûre (66 %). -->
+  <g transform="translate(88 88) scale(0.5)">
+    <circle cx="256" cy="256" r="214" fill="#B3261E"/>
+    <circle cx="256" cy="256" r="214" fill="none" stroke="#E3A92B" stroke-width="18"/>
+    <circle cx="256" cy="256" r="178" fill="none" stroke="#F5E9D0" stroke-width="4" opacity="0.45"/>
+    <path d="M256 104 L288 312 L256 356 L224 312 Z" fill="#E3A92B"/>
+    <path d="M256 110 L256 348" stroke="#F5E9D0" stroke-width="5" opacity="0.55"/>
+    <path d="M168 372 H344" stroke="#E3A92B" stroke-width="20" stroke-linecap="round"/>
+    <path d="M256 372 V428" stroke="#7A4A22" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="256" cy="440" r="14" fill="#E3A92B"/>
+  </g>
+</svg>

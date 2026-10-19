@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Guerriere d'Abomey 1.0\n"
+"Project-Id-Version: Abomey Warriors 1.0\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GUERRIÈRE D'ABOMEY
-msgid "GUERRIÈRE D'ABOMEY"
-msgstr "WARRIOR OF ABOMEY"
+#: ABOMEY WARRIORS
+msgid "ABOMEY WARRIORS"
+msgstr "ABOMEY WARRIORS"
 
 #: Libère les prisonniers. Traverse le royaume.
 msgid "Libère les prisonniers. Traverse le royaume."

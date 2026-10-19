@@ -24,9 +24,9 @@ sont générées (`export/shots/play/`).
 | Annexe — reste | movesets, PvP joué, forge, écrans de talents | `docs/ANNEXE_AVANCEMENT.md` |
 | PHASE 10 (publication) | politique de confidentialité, clé release, AAB signé, captures **faits** ; reste l'URL publique et l'envoi en Play Console | `docs/SIGNATURE_RELEASE.md` |
 | Planche d'assets | découpée (57 pièces) | `assets/ui/sliced/` + `export/planche_assets.html` |
-| APK de test | 53,9 Mo, **signé**, 0.8.0 / code 8, musique incluse | `export/guerriere-abomey-debug.apk` |
-| AAB Play | 51,3 Mo, **signé clé release**, 0.8.0 / code 8 | `export/guerriere-abomey-0.8.0.aab` |
-| Captures store | 4 PNG 1280×720 (menu, arène, boss, victoire) | `export/shots/play/` |
+| APK de test | 53,9 Mo, **signé**, 0.8.0 / code 8, musique incluse | `export/abomey-warriors-debug.apk` |
+| AAB Play | 51,3 Mo, **signé clé release**, 0.8.0 / code 8 | `export/abomey-warriors-0.8.0.aab` |
+| Visuels store | icône 512, calque avant + fond adaptatif 432, bannière 1024×500, 4 captures 1280×720 | `assets/ui/store/` + `export/store/` + `export/shots/play/` |
 | Versionnage | dépôt `main` à jour | <https://github.com/EudesJohn/jeux> |
 
 ## 2. Problèmes trouvés et corrigés
@@ -161,7 +161,7 @@ godot --headless --path . --script res://tools/slice_asset_sheet.gd -- \
 
 # APK signé (JAVA_HOME obligatoire, sinon APK non installable)
 export JAVA_HOME="C:/Program Files/Android/Android Studio/jbr"
-godot --headless --path . --export-debug "Android" export/guerriere-abomey-debug.apk
+godot --headless --path . --export-debug "Android" export/abomey-warriors-debug.apk
 
 # Préparation des modèles Blender (voir tools/blender/README.md)
 "C:/Program Files/Blender Foundation/Blender 4.2/blender.exe" -b -P tools/blender/clean_character.py -- \

@@ -1,4 +1,4 @@
-# Fiche Google Play — Guerrière d'Abomey
+# Fiche Google Play — Abomey Warriors
 
 Éditeur : **Johnson Studio** · Bénin · eudesjohn650@mail.com
 Politique de confidentialité : `docs/POLITIQUE_CONFIDENTIALITE.md` (à héberger,
@@ -8,7 +8,7 @@ voir § 7).
 
 ## 1. Français
 
-**Nom de l'application** (30 caractères max) : `Guerrière d'Abomey` (18)
+**Nom de l'application** (30 caractères max) : `Abomey Warriors` (15)
 
 **Description courte** (80 caractères max) :
 
@@ -18,7 +18,7 @@ voir § 7).
 
 > **Le royaume est tombé. Une lame se lève.**
 >
-> Guerrière d'Abomey est un jeu d'action-aventure 3D en low-poly, inspiré du
+> Abomey Warriors est un jeu d'action-aventure 3D en low-poly, inspiré du
 > royaume du Dahomey. Vous incarnez une jeune guerrière qui traverse cinq
 > chapitres pour libérer les villages, briser les cages et affronter les
 > gardiens du royaume.
@@ -61,7 +61,7 @@ aucun autre contenu sensible. Public visé : 7 ans et plus.
 
 ## 2. English
 
-**App name** : `Guerrière d'Abomey` (Warrior of Abomey)
+**App name** : `Abomey Warriors` (15 characters)
 
 **Short description** (80 characters max) :
 
@@ -71,7 +71,7 @@ aucun autre contenu sensible. Public visé : 7 ans et plus.
 
 > **The kingdom has fallen. One blade rises.**
 >
-> Guerrière d'Abomey is a low-poly 3D action-adventure inspired by the kingdom
+> Abomey Warriors is a low-poly 3D action-adventure inspired by the kingdom
 > of Dahomey. Play a young warrior across five chapters: free villages, break
 > open cages and face the kingdom's guardians.
 >
@@ -146,9 +146,19 @@ Réponses exactes, cohérentes avec la politique :
 un code déjà utilisé. L'**AAB signé** est produit par `bash tools/build_aab.sh`
 (clé et procédure : `docs/SIGNATURE_RELEASE.md`).
 
-**Visuels** : 4 captures 1280×720 dans `export/shots/play/` (menu, arène, boss,
-victoire), générées par `tests/StoreShots.tscn`. Il faut au minimum 2 captures
-de téléphone ; celles-ci conviennent pour la fiche.
+**Visuels** :
+
+| Élément Play | Fichier | Format |
+|---|---|---|
+| Icône | `assets/ui/store/icon_512.png` | 512×512 PNG 32 bits |
+| Bannière | `export/store/feature_graphic_1024x500.png` | 1024×500 PNG |
+| Captures (4) | `export/shots/play/0{1..4}_*.png` | 1280×720 PNG |
+
+Régénération : `godot --headless --path . --script res://tools/make_store_assets.gd`
+(icône + calque adaptatif) puis `python tools/make_store_assets.py` (fond
+adaptatif + bannière) et `godot --path . --resolution 1280x720 res://tests/StoreShots.tscn`
+(captures). L'icône du lanceur, le calque avant et le fond adaptatif sont
+référencés par **les deux presets** d'export.
 
 ## 7. Héberger la politique de confidentialité
 

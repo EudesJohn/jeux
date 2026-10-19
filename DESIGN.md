@@ -1,4 +1,4 @@
-# GUERRIÈRE D'ABOMEY — Dossier de production complet (VERSION 3D)
+# ABOMEY WARRIORS — Dossier de production complet (VERSION 3D)
 
 > Document à donner à Claude (idéalement **Claude Code**) pour construire le jeu phase par phase.
 > Jeu mobile Android **3D low-poly**, **hors ligne**, action-aventure et combat, **coop WiFi local à 2 joueurs**.
@@ -66,7 +66,7 @@
 
 ## 2. Vision et piliers
 
-**Titre :** Guerrière d'Abomey
+**Titre :** Abomey Warriors
 **Genre :** action-aventure / combat 3D low-poly stylisé
 **Plateforme :** Android (APK), hors ligne, coop WiFi local
 **Session :** 3 à 5 minutes par niveau
@@ -1933,7 +1933,7 @@ Sauvegarde automatique : fin de niveau, achat, changement de réglage. Ne jamais
 
 ```
 Tu es un développeur senior de jeux mobiles Godot 4 (GDScript) et un
-directeur technique 3D. Tu m'aides à créer "Guerrière d'Abomey", un jeu
+directeur technique 3D. Tu m'aides à créer "Abomey Warriors", un jeu
 mobile Android 3D low-poly HORS LIGNE d'action-aventure et de combat,
 inspiré du royaume du Dahomey et des Agojié.
 

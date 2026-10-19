@@ -3,7 +3,7 @@
 # Test complet sur téléphone Android branché en USB — Guerrière d'Abomey
 #
 #   bash tools/tester_telephone.sh              # export + installation + test
-#   bash tools/tester_telephone.sh --no-build   # réutilise build/guerriere_debug.apk
+#   bash tools/tester_telephone.sh --no-build   # réutilise build/abomey_warriors_debug.apk
 #   bash tools/tester_telephone.sh --seconds 600
 #
 # Ce script fait A, B et C du protocole :
@@ -23,7 +23,7 @@ set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT="$ROOT/export/phone"
-APK="$ROOT/build/guerriere_debug.apk"
+APK="$ROOT/build/abomey_warriors_debug.apk"
 PKG="com.dahomey.guerriereabomey"
 ACTIVITE_DEFAUT="$PKG/com.godot.game.GodotApp"
 SECONDES=420

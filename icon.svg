@@ -1,8 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
-  <!-- Icône provisoire PHASE 0 : médaillon rouge Dahomey avec sabre or (remplacer à PHASE 9) -->
-  <rect width="192" height="192" rx="24" fill="#1F2A5C"/>
-  <circle cx="96" cy="96" r="72" fill="#B3261E"/>
-  <circle cx="96" cy="96" r="72" fill="none" stroke="#E3A92B" stroke-width="8"/>
-  <path d="M96 34 L104 120 L96 140 L88 120 Z" fill="#E3A92B"/>
-  <path d="M96 34 L76 118 L96 132" fill="none" stroke="#F5E9D0" stroke-width="6" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Médaillon du Dahomey : disque rouge, anneau d'or, sabre cérémoniel. -->
+  <rect width="512" height="512" fill="#151D3D"/>
+  <circle cx="256" cy="256" r="214" fill="#B3261E"/>
+  <circle cx="256" cy="256" r="214" fill="none" stroke="#E3A92B" stroke-width="18"/>
+  <circle cx="256" cy="256" r="178" fill="none" stroke="#F5E9D0" stroke-width="4" opacity="0.45"/>
+  <path d="M256 104 L288 312 L256 356 L224 312 Z" fill="#E3A92B"/>
+  <path d="M256 110 L256 348" stroke="#F5E9D0" stroke-width="5" opacity="0.55"/>
+  <path d="M168 372 H344" stroke="#E3A92B" stroke-width="20" stroke-linecap="round"/>
+  <path d="M256 372 V428" stroke="#7A4A22" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="256" cy="440" r="14" fill="#E3A92B"/>
 </svg>
